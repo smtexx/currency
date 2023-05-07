@@ -1,0 +1,13 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: var(--indent-l);
+}
+
+.text {
+  font-weight: 700;
+  font-size: var(--fsize-4);
+}

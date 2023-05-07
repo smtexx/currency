@@ -1,0 +1,10 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--indent-m);
+  background-color: var(--color-green);
+  z-index: var(--layer-notification);
+}

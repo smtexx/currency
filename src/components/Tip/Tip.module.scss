@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+  padding: 2rem var(--indent-m) var(--indent-l);
+  border-radius: var(--radius-m);
+  border: 2px solid var(--color-green-l);
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--color-green-l);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--indent-m);
+  margin-top: var(--indent-l);
+  color: var(--color-white);
+}
