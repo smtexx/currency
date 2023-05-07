@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: var(--indent-s);
+  padding: var(--indent-s) var(--indent-m);
+  color: var(--color-white);
+  border-radius: var(--radius-m);
+  border: 2px solid var(--color-white);
+}
+
+.icon {
+  display: flex;
+  font-size: var(--fsize-2);
+}
+
+.button {
+  margin-left: auto;
+}
