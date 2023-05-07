@@ -1,0 +1,30 @@
+:root {
+  font-family: var(--font-main);
+}
+
+.cm-link {
+  font-weight: 700;
+  text-decoration: underline;
+
+  @media (hover: hover) {
+    &:hover {
+      animation: neon 1s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes neon {
+  0% {
+    color: #00ff00;
+  }
+  100% {
+    color: var(--color-white);
+  }
+}
+
+.cm-icon-button {
+  display: flex;
+  padding: var(--indent-s);
+  color: var(--color-white);
+  font-size: 2rem;
+}
