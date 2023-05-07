@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../public/fonts/subset-Philosopher-Bold.woff2')
+      format('woff2'),
+    url('../../../public/fonts/subset-Philosopher-Bold.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('../../../public/fonts/subset-Philosopher-Regular.woff2')
+      format('woff2'),
+    url('../../../public/fonts/subset-Philosopher-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Grenze Gotisch';
+  src: url('../../../public/fonts//subset-GrenzeGotisch-Bold.woff2')
+      format('woff2'),
+    url('../../../public/fonts/subset-GrenzeGotisch-Bold.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
