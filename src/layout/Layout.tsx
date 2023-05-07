@@ -4,17 +4,17 @@ import Notification from '../components/Notification/Notification';
 import s from './Layout.module.scss';
 
 interface Props {
-  page?: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export default function Layout({ page }: Props) {
+export default function Layout({ children }: Props) {
   return (
     <div className={s.wrapperOutside}>
       <div className={s.wrapperInside}>
         <Header />
-        <main className={s.main}>{page}</main>
+        <main className={s.main}>{children}</main>
         <Footer />
-        <Notification />
+        {/* <Notification /> */}
       </div>
     </div>
   );
