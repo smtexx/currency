@@ -7,7 +7,7 @@ export default function ExchangeBlock() {
   return (
     <div className={s.wrapper}>
       <div className={s.header}>
-        <h2 className={s.title}>Конвертировать валюту</h2>
+        <h2 className="cm-block-title">Конвертировать валюту</h2>
         <HelpButton />
       </div>
       <CurrencyBlock />
