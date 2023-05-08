@@ -42,3 +42,16 @@ body {
     outline-width: 2px;
   }
 }
+
+.cm-direction-icon {
+  display: flex;
+  align-self: center;
+  margin: -1.5rem 0;
+  padding: var(--in-s) var(--in-m);
+  color: var(--co-white);
+  font-size: 2.25rem;
+  background-color: var(--co-green);
+  border-radius: var(--rad-m);
+  z-index: var(--lr-content-s);
+  box-shadow: 5px 5px 10px var(--co-green);
+}

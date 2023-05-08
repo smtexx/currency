@@ -11,7 +11,7 @@ export default function Exchange() {
         <HelpButton />
       </div>
       <CurrencyBlock />
-      <div className={s.icon}>
+      <div className="cm-direction-icon">
         <CgArrowsExchangeAltV />
       </div>
       <CurrencyBlock />
