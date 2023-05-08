@@ -5,13 +5,13 @@ import s from './CurrencyBlock.module.scss';
 export default function CurrencyBlock() {
   return (
     <form className={s.wrapper}>
-      <label className={s.label} htmlFor="firstValue">
+      <label className={s.label} htmlFor="currencyValue">
         Евро
       </label>
       <input
         className={setClass([['cm-input'], [s.input]])}
-        type="text"
-        id="firstValue"
+        type="number"
+        id="currencyValue"
         value={0}
       />
       <Selector />
