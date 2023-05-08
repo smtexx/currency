@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
-  padding: 2rem var(--indent-m) var(--indent-l);
-  border-radius: var(--radius-m);
-  border: 2px solid var(--color-green-l);
+  padding: 2rem var(--in-m) var(--in-l);
+  border-radius: var(--rad-m);
+  border: 2px solid var(--co-green-l);
 }
 
 .close {
@@ -16,13 +16,13 @@
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  color: var(--color-green-l);
+  color: var(--co-green-l);
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  row-gap: var(--indent-m);
-  margin-top: var(--indent-l);
-  color: var(--color-white);
+  row-gap: var(--in-m);
+  margin-top: var(--in-l);
+  color: var(--co-white);
 }

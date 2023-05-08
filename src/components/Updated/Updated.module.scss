@@ -1,16 +1,17 @@
 .wrapper {
   display: flex;
   align-items: center;
-  column-gap: var(--indent-s);
-  padding: var(--indent-s) var(--indent-m);
-  color: var(--color-white);
-  border-radius: var(--radius-m);
-  border: 2px solid var(--color-white);
+  column-gap: var(--in-s);
+  padding: var(--in-s) var(--in-m);
+  padding-right: var(--in-s);
+  color: var(--co-white);
+  border-radius: var(--rad-m);
+  border: 2px solid var(--co-white);
 }
 
 .icon {
   display: flex;
-  font-size: var(--fsize-2);
+  font-size: var(--fz-xxl);
 }
 
 .button {

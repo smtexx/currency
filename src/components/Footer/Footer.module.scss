@@ -1,11 +1,11 @@
 .wrapper {
   margin-bottom: 5px;
-  padding: var(--indent-m) var(--indent-l);
-  border: 2px solid var(--color-white);
-  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  padding: var(--in-m) var(--in-l);
+  border: 2px solid var(--co-white);
+  border-radius: var(--rad-m) var(--rad-m) 0 0;
 }
 
 .text {
   text-align: center;
-  color: var(--color-white);
+  color: var(--co-white);
 }

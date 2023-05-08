@@ -4,10 +4,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: var(--indent-l);
+  row-gap: var(--in-l);
 }
 
 .text {
   font-weight: 700;
-  font-size: var(--fsize-4);
+  font-size: var(--fz-l);
 }

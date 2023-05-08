@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 0 var(--indent-s);
-  background-color: var(--color-green);
+  padding: 0 var(--in-s);
+  background-color: var(--co-green);
 }
 
 .main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  row-gap: var(--indent-l);
-  padding: var(--indent-l) 0;
+  row-gap: var(--in-m);
+  padding: var(--in-m) 0;
 }
