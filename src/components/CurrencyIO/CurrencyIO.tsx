@@ -1,8 +1,8 @@
 import { setClass } from '../../lib/helpers';
 import Selector from '../Selector/Selector';
-import s from './CurrencyBlock.module.scss';
+import s from './CurrencyIO.module.scss';
 
-export default function CurrencyBlock() {
+export default function CurrencyIO() {
   return (
     <form className={s.wrapper}>
       <label className={s.label} htmlFor="currencyValue">
