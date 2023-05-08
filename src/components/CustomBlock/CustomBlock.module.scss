@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--in-s);
+  padding: var(--in-m) var(--in-s);
+  color: var(--co-green);
+  border-radius: var(--rad-m);
+  background-color: var(--co-white);
+
+  :global(.cm-icon-button) {
+    color: var(--co-green);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: var(--in-s);
+}
