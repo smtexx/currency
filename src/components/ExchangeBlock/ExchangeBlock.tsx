@@ -1,20 +1,15 @@
-import CurrencyBlock from '../CurrencyBlock/CurrencyBlock';
-import HelpButton from '../HelpButton/HelpButton';
 import { CgArrowsExchangeAltV } from 'react-icons/cg';
-import s from './ExchangeBlock.module.scss';
+import CurrencyIO from '../CurrencyIO/CurrencyIO';
+import CustomBlock from '../CustomBlock/CustomBlock';
 
 export default function ExchangeBlock() {
   return (
-    <div className={s.wrapper}>
-      <div className={s.header}>
-        <h2 className="cm-block-title">Конвертировать валюту</h2>
-        <HelpButton />
-      </div>
-      <CurrencyBlock />
+    <CustomBlock title="Конвертировать валюту">
+      <CurrencyIO />
       <div className="cm-direction-icon">
         <CgArrowsExchangeAltV />
       </div>
-      <CurrencyBlock />
-    </div>
+      <CurrencyIO />
+    </CustomBlock>
   );
 }
