@@ -10,6 +10,7 @@
   --co-lime: #00ff00;
   --co-white: #ffffff;
   --co-black: #000;
+  --co-green-tr: #6b80687d;
   --co-green-l-tr: #c4ccc3a6;
   --co-white-tr: #ffffff2e;
 
@@ -57,4 +58,7 @@
   --dl-6: 1800ms;
   --dl-7: 2100ms;
   --dl-8: 2400ms;
+
+  // Shadow
+  --sd-block: 5px 5px 10px var(--co-green-tr);
 }
