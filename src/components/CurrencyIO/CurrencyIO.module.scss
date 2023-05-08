@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 5rem;
+  grid-template-columns: 1fr auto;
   grid-template-rows: repeat(2, auto);
   gap: var(--in-m) var(--in-s);
   padding: var(--in-m);
