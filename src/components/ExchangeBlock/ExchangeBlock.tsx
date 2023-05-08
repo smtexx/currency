@@ -1,9 +1,9 @@
 import CurrencyBlock from '../CurrencyBlock/CurrencyBlock';
 import HelpButton from '../HelpButton/HelpButton';
 import { CgArrowsExchangeAltV } from 'react-icons/cg';
-import s from './Exchange.module.scss';
+import s from './ExchangeBlock.module.scss';
 
-export default function Exchange() {
+export default function ExchangeBlock() {
   return (
     <div className={s.wrapper}>
       <div className={s.header}>
