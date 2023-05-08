@@ -4,7 +4,7 @@ import s from './UserRateInput.module.scss';
 
 export default function UserRateInput() {
   return (
-    <form className={s.wrapper}>
+    <form className={setClass([['cm-inside-block'], [s.wrapper]])}>
       <h3 className={s.title}>Добавить курс</h3>
       <div className={s.fieldWrapper}>
         <label htmlFor="fromCurrency">Начальная валюта:</label>
