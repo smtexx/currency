@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: var(--in-m);
+  row-gap: var(--in-s);
   padding: var(--in-m) var(--in-s);
   color: var(--co-green);
   border-radius: var(--rad-m);
@@ -27,7 +27,7 @@
 .icon {
   display: flex;
   align-self: center;
-  margin: -2rem 0;
+  margin: -1.5rem 0;
   padding: var(--in-s) var(--in-m);
   color: var(--co-white);
   font-size: 2.5rem;
