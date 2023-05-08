@@ -1,0 +1,19 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5rem;
+  grid-template-rows: repeat(2, auto);
+  gap: var(--in-m) var(--in-s);
+  padding: var(--in-m);
+  padding-bottom: 2rem;
+  border: 2px solid var(--co-green);
+  border-radius: var(--rad-m);
+}
+
+.label {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.input {
+  width: 100%;
+}
