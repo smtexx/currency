@@ -5,6 +5,10 @@
     padding-bottom: var(--in-l);
     background-color: var(--co-green-l);
   }
+
+  @media screen and (min-width: $tablet-s) {
+    padding: var(--in-l) 0 var(--in-xl);
+  }
 }
 
 .wrapperInside {
@@ -19,6 +23,11 @@
     margin: 0 auto;
     padding: 0 var(--in-xl);
     box-shadow: 0 0 25px var(--co-black);
+    border-radius: 0 0 var(--rad-m) var(--rad-m);
+  }
+
+  @media screen and (min-width: $tablet-s) {
+    border-radius: var(--rad-m);
   }
 }
 

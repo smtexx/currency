@@ -1,8 +1,15 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   margin-bottom: 5px;
   padding: var(--in-m) var(--in-l);
   border: 2px solid var(--co-white);
   border-radius: var(--rad-m) var(--rad-m) 0 0;
+
+  @media screen and (min-width: $phone-s) {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .text {

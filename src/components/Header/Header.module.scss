@@ -1,8 +1,14 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   padding: var(--in-m) var(--in-l);
   background-color: var(--co-white);
   border-top: 5px solid var(--co-green);
   border-radius: 0px 0px var(--rad-m) var(--rad-m);
+
+  @media screen and (min-width: $tablet-s) {
+    border-top: none;
+  }
 }
 
 .header {
