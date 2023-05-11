@@ -1,11 +1,25 @@
 @import '../app/styles/breakpoints.scss';
 
+.wrapperOutside {
+  @media screen and (min-width: $phone-s) {
+    padding-bottom: var(--in-l);
+    background-color: var(--co-green-l);
+  }
+}
+
 .wrapperInside {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   padding: 0 var(--in-s);
   background-color: var(--co-green);
+
+  @media screen and (min-width: $phone-s) {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0 var(--in-xl);
+    box-shadow: 0 0 25px var(--co-black);
+  }
 }
 
 .main {

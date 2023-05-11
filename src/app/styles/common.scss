@@ -29,6 +29,10 @@ body {
       font-size: var(--fz-xl);
     }
   }
+
+  @media screen and (min-width: $phone-s) {
+    padding: var(--in-m) var(--in-l) var(--in-xl);
+  }
 }
 
 .cm-inner-block {

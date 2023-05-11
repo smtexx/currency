@@ -12,6 +12,10 @@
   @media screen and (min-width: $phone-xs) {
     padding: var(--in-s) var(--in-m);
   }
+
+  @media screen and (min-width: $phone-s) {
+    padding: var(--in-m) var(--in-l);
+  }
 }
 
 .icon {
