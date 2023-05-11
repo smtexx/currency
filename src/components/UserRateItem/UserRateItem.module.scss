@@ -2,22 +2,27 @@
   display: flex;
   align-items: center;
   font-family: var(--ff-mono);
+  font-size: var(--fz-s);
   border-radius: var(--rad-s);
-  overflow: hidden;
-  border: 2px solid var(--co-white);
   outline: 1px solid var(--co-green);
+  outline-offset: 2px;
 }
 
 .currency,
 .value {
-  padding: var(--in-s);
+  padding: var(--in-xs);
   color: var(--co-white);
   background-color: var(--co-green);
+  overflow: hidden;
+}
+
+.currency:first-child {
+  border-radius: var(--rad-s) 0 0 var(--rad-s);
 }
 
 .arrow {
   display: flex;
-  padding: 0 0.25rem;
+  padding: 0 0.15rem;
 }
 
 .value {
@@ -26,6 +31,7 @@
 
 .close {
   display: flex;
-  padding: 0.3125rem;
-  font-size: 1.5rem;
+  padding: 0 0.25rem;
+  font-size: var(--fz-xl);
+  cursor: pointer;
 }

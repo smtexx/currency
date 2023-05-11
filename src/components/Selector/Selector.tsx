@@ -26,7 +26,7 @@ export default function Selector() {
             role="menuitem"
             tabIndex={-1}
           >
-            USD - Доллар США
+            USD - <span className={s.currencyName}>Доллар США</span>
           </button>
         </li>
         <li className={s.menuItem} role="presentation">
@@ -36,7 +36,7 @@ export default function Selector() {
             role="menuitem"
             tabIndex={-1}
           >
-            EUR - Евро
+            EUR - <span className={s.currencyName}>Евро</span>
           </button>
         </li>
         <li className={s.menuItem} role="presentation">
@@ -46,7 +46,8 @@ export default function Selector() {
             role="menuitem"
             tabIndex={-1}
           >
-            RUB - Российский рубль
+            RUB -{' '}
+            <span className={s.currencyName}>Российский рубль</span>
           </button>
         </li>
         <li className={s.menuItem} role="presentation">
@@ -56,7 +57,8 @@ export default function Selector() {
             role="menuitem"
             tabIndex={-1}
           >
-            RSD - Сербский динар
+            RSD -{' '}
+            <span className={s.currencyName}>Сербский динар</span>
           </button>
         </li>
         <li className={s.menuItem} role="presentation">
@@ -66,7 +68,7 @@ export default function Selector() {
             role="menuitem"
             tabIndex={-1}
           >
-            KZT - Тенге
+            KZT - <span className={s.currencyName}>Тенге</span>
           </button>
         </li>
       </ul>

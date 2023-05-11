@@ -1,14 +1,13 @@
 .wrapper {
   position: relative;
-  padding: 2rem var(--in-m) var(--in-l);
+  padding: 0 var(--in-m) var(--in-l);
   border-radius: var(--rad-m);
   border: 2px solid var(--co-green-l);
 }
 
 .close {
-  position: absolute;
-  top: 0;
-  right: 0;
+  color: var(--co-white);
+  margin: 0 -1rem 0 auto;
 }
 
 .icon {

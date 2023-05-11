@@ -12,12 +12,14 @@
   top: calc(100% + var(--in-s));
   right: 0;
   width: 15rem;
-  padding: var(--in-s) var(--in-m);
+  padding: var(--in-s);
   color: var(--co-white);
+  border: 2px solid var(--co-white);
+  outline-width: 2px;
+  outline-offset: 0;
+  box-shadow: 5px 5px 10px var(--co-green);
   background-color: var(--co-green);
   z-index: var(--lr-content-m);
-  box-shadow: 5px 5px 10px var(--co-green);
-  outline-width: 2px;
 }
 
 .closed {
@@ -26,10 +28,14 @@
 
 .button {
   display: block;
-  padding: var(--in-s);
+  padding: var(--in-xs);
   border-radius: var(--rad-s);
 }
 
 .active {
   outline: 1px solid var(--co-white);
+}
+
+.currencyName {
+  font-family: var(--ff-main);
 }

@@ -7,7 +7,11 @@ export default function Tip() {
   return (
     <div className={s.wrapper}>
       <button
-        className={setClass([[s.close], ['cm-icon-button']])}
+        className={setClass([
+          [s.close],
+          ['cm-icon-button'],
+          ['cm-link-hover'],
+        ])}
         aria-label="закрыть"
         title="Закрыть"
       >

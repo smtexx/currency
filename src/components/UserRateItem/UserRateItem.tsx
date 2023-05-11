@@ -1,6 +1,7 @@
 import { BiChevronsRight } from 'react-icons/bi';
 import { IoCloseSharp } from 'react-icons/io5';
 import s from './UserRateItem.module.scss';
+import { setClass } from '../../lib/helpers';
 
 export default function UserRateItem() {
   return (
@@ -14,7 +15,7 @@ export default function UserRateItem() {
         <BiChevronsRight />
       </span>
       <span className={s.value}>117.5</span>
-      <button className={s.close}>
+      <button className={setClass([['cm-link-hover'], [s.close]])}>
         <IoCloseSharp />
       </button>
     </li>

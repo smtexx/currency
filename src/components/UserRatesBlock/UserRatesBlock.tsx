@@ -1,16 +1,17 @@
-import CustomBlock from '../CustomBlock/CustomBlock';
+import { setClass } from '../../lib/helpers';
+import HelpButton from '../HelpButton/HelpButton';
 import UserRateInput from '../UserRateInput/UserRateInput';
 import UserRatesAdded from '../UserRatesAdded/UserRatesAdded';
-import { BiChevronsDown } from 'react-icons/bi';
 
 export default function UserRatesBlock() {
   return (
-    <CustomBlock title="Пользовательские курсы">
-      <UserRateInput />
-      <div className="cm-direction-icon">
-        <BiChevronsDown />
+    <div className={setClass([['cm-outer-block']])}>
+      <div className="cm-outer-block-header">
+        <h2>Пользовательские курсы</h2>
+        <HelpButton />
       </div>
+      <UserRateInput />
       <UserRatesAdded />
-    </CustomBlock>
+    </div>
   );
 }

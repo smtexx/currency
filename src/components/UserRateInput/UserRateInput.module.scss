@@ -1,9 +1,3 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--in-s);
-}
-
 .fieldWrapper {
   display: flex;
   align-items: center;
@@ -15,9 +9,8 @@
 }
 
 .addButton {
-  margin-top: var(--in-m);
+  margin-top: 1rem;
+  padding: 0.5rem var(--in-l) !important;
   text-align: center;
-  font-size: var(--fz-l);
-  font-weight: 700;
-  font-family: var(--ff-main);
+  font-family: var(--ff-main) !important;
 }

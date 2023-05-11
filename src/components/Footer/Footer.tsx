@@ -7,7 +7,7 @@ export default function Footer() {
         Thanks to{' '}
         <a
           href="mailto:smtexx@hotmail.com"
-          className="cm-link"
+          className="cm-link cm-link-hover"
           rel="noreferrer noopener"
         >
           smtexx@hotmail.com

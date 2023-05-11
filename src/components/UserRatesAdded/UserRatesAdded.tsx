@@ -4,8 +4,10 @@ import s from './UserRatesAdded.module.scss';
 
 export default function UserRatesAdded() {
   return (
-    <div className={setClass([['cm-inside-block'], [s.wrapper]])}>
-      <h3 className={s.title}>Пользовательские курсы</h3>
+    <div className={setClass([['cm-inner-block'], [s.wrapper]])}>
+      <h3 className="cm-inner-block-header">
+        Пользовательские курсы
+      </h3>
       <ul className={s.ratesHolder}>
         <UserRateItem />
         <UserRateItem />
