@@ -1,6 +1,13 @@
+@import '../../app/styles/breakpoints.scss';
+
 .ratesHolder {
   display: flex;
   flex-direction: column;
   row-gap: var(--in-s);
   margin-top: var(--in-xs);
+
+  @media screen and (min-width: $phone-xs) {
+    row-gap: var(--in-l);
+    margin-top: var(--in-s);
+  }
 }

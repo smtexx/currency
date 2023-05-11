@@ -1,3 +1,5 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -6,6 +8,10 @@
   border-radius: var(--rad-s);
   outline: 1px solid var(--co-green);
   outline-offset: 2px;
+
+  @media screen and (min-width: $phone-xs) {
+    font-size: var(--fz-m);
+  }
 }
 
 .currency,
@@ -14,6 +20,10 @@
   color: var(--co-white);
   background-color: var(--co-green);
   overflow: hidden;
+
+  @media screen and (min-width: $phone-xs) {
+    padding: 0.55rem var(--in-s);
+  }
 }
 
 .currency:first-child {
@@ -23,6 +33,10 @@
 .arrow {
   display: flex;
   padding: 0 0.15rem;
+
+  @media screen and (min-width: $phone-xs) {
+    padding: 0 0.25rem;
+  }
 }
 
 .value {
@@ -34,4 +48,8 @@
   padding: 0 0.25rem;
   font-size: var(--fz-xl);
   cursor: pointer;
+
+  @media screen and (min-width: $phone-xs) {
+    font-size: var(--fz-xxl);
+  }
 }

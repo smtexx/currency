@@ -1,3 +1,5 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   position: relative;
   padding: 0 var(--in-m) var(--in-l);
@@ -8,6 +10,10 @@
 .close {
   color: var(--co-white);
   margin: 0 -1rem 0 auto;
+
+  @media screen and (min-width: $phone-xs) {
+    padding: var(--in-s);
+  }
 }
 
 .icon {
@@ -24,4 +30,9 @@
   row-gap: var(--in-m);
   margin-top: var(--in-l);
   color: var(--co-white);
+
+  @media screen and (min-width: $phone-xs) {
+    margin-top: var(--in-xl);
+    text-indent: var(--in-xl);
+  }
 }

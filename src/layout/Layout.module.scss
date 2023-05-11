@@ -1,3 +1,5 @@
+@import '../app/styles/breakpoints.scss';
+
 .wrapperInside {
   display: flex;
   flex-direction: column;
@@ -12,4 +14,9 @@
   flex-direction: column;
   row-gap: var(--in-m);
   padding: var(--in-m) 0;
+
+  @media screen and (min-width: $phone-xs) {
+    row-gap: var(--in-l);
+    padding: var(--in-l) 0;
+  }
 }

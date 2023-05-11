@@ -1,12 +1,17 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   display: flex;
   align-items: center;
   column-gap: var(--in-s);
   padding: var(--in-xs) var(--in-m);
-  // padding-right: 0;
   color: var(--co-white);
   border-radius: var(--rad-m);
   border: 2px solid var(--co-white);
+
+  @media screen and (min-width: $phone-xs) {
+    padding: var(--in-s) var(--in-m);
+  }
 }
 
 .icon {

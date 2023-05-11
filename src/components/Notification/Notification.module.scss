@@ -1,3 +1,5 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   position: fixed;
   top: 0;
@@ -7,4 +9,8 @@
   padding: var(--in-m);
   background-color: var(--co-green);
   z-index: var(--lr-alert);
+
+  @media screen and (min-width: $phone-xs) {
+    padding: var(--in-xl) var(--in-m) var(--in-l);
+  }
 }

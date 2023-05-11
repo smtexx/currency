@@ -1,3 +1,5 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   position: relative;
   width: 5rem;
@@ -20,6 +22,10 @@
   box-shadow: 5px 5px 10px var(--co-green);
   background-color: var(--co-green);
   z-index: var(--lr-content-m);
+
+  @media screen and (min-width: $phone-xs) {
+    width: auto;
+  }
 }
 
 .closed {
@@ -30,6 +36,12 @@
   display: block;
   padding: var(--in-xs);
   border-radius: var(--rad-s);
+
+  @media screen and (min-width: $phone-xs) {
+    max-width: 70vw;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 .active {
