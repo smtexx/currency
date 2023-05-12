@@ -10,6 +10,14 @@
   width: 8rem;
 }
 
+.wrapper {
+  :global(.cm-direction-icon) {
+    @media screen and (min-width: $tablet-m) {
+      display: none;
+    }
+  }
+}
+
 .addButton {
   margin-top: 1rem;
   padding: 0.5rem var(--in-l) !important;

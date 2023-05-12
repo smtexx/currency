@@ -1,0 +1,7 @@
+@import '../../app/styles/breakpoints.scss';
+
+.wrapper {
+  @media screen and (max-width: $tablet-m - 1) {
+    display: none;
+  }
+}

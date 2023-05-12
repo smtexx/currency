@@ -1,13 +1,18 @@
 @import '../app/styles/breakpoints.scss';
 
 .wrapperOutside {
+  min-height: 100vh;
   @media screen and (min-width: $phone-s) {
     padding-bottom: var(--in-l);
     background-color: var(--co-green-l);
   }
 
   @media screen and (min-width: $tablet-s) {
-    padding: var(--in-l) 0 var(--in-xl);
+    padding-bottom: var(--in-xl);
+  }
+
+  @media screen and (orientation: landscape) and (min-height: 650px) {
+    padding-top: var(--in-xl);
   }
 }
 
@@ -29,6 +34,12 @@
   @media screen and (min-width: $tablet-s) {
     border-radius: var(--rad-m);
   }
+
+  @media screen and (min-width: $tablet-m) {
+    max-width: 1100px;
+    min-height: unset;
+    padding: 0 var(--in-m);
+  }
 }
 
 .main {
@@ -41,5 +52,11 @@
   @media screen and (min-width: $phone-xs) {
     row-gap: var(--in-l);
     padding: var(--in-l) 0;
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--in-m);
   }
 }

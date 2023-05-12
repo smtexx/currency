@@ -11,7 +11,9 @@ export default function UserRatesBlock() {
         <HelpButton />
       </div>
       <UserRateInput />
-      <UserRatesAdded />
+      <div className="cm-hide-on-tablet-m">
+        <UserRatesAdded />
+      </div>
     </div>
   );
 }

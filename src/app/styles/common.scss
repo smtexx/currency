@@ -6,6 +6,10 @@ body {
   @media screen and (min-width: $phone-xs) {
     font-size: 1.15rem;
   }
+
+  @media screen and (min-width: $tablet-m) {
+    font-size: 1rem;
+  }
 }
 
 // Blocks
@@ -28,10 +32,22 @@ body {
     @media screen and (min-width: $phone-xs) {
       font-size: var(--fz-xl);
     }
+
+    @media screen and (min-width: $tablet-m) {
+      font-size: var(--fz-l);
+    }
   }
 
   @media screen and (min-width: $phone-s) {
     padding: var(--in-m) var(--in-l) var(--in-xl);
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    padding: var(--in-m) var(--in-m) var(--in-xl);
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    row-gap: var(--in-s);
   }
 }
 
@@ -52,6 +68,14 @@ body {
     display: none;
   }
 }
+
+.cm-hide-on-tablet-m {
+  @media screen and (min-width: $tablet-m) {
+    display: none;
+  }
+}
+
+// Links
 
 .cm-link {
   font-weight: 700;
@@ -74,6 +98,8 @@ body {
     color: inherit;
   }
 }
+
+// Buttons
 
 .cm-icon-button {
   display: flex;
@@ -103,6 +129,8 @@ body {
     font-size: var(--fz-m);
   }
 }
+
+// Icons
 
 .cm-direction-icon {
   position: absolute;

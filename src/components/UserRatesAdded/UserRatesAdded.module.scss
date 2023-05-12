@@ -1,5 +1,9 @@
 @import '../../app/styles/breakpoints.scss';
 
+.wrapper {
+  height: 100%;
+}
+
 .ratesHolder {
   display: flex;
   flex-direction: column;
@@ -9,5 +13,10 @@
   @media screen and (min-width: $phone-xs) {
     row-gap: var(--in-l);
     margin-top: var(--in-s);
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    height: 100%;
+    row-gap: var(--in-m);
   }
 }

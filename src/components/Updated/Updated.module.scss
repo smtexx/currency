@@ -16,6 +16,13 @@
   @media screen and (min-width: $phone-s) {
     padding: var(--in-m) var(--in-l);
   }
+
+  @media screen and (min-width: $tablet-m) {
+    margin-right: -0.55rem;
+    padding: 0;
+    color: var(--co-green);
+    border: none;
+  }
 }
 
 .icon {
@@ -25,4 +32,8 @@
 
 .button {
   margin-left: auto;
+
+  @media screen and (min-width: $tablet-m) {
+    margin-left: 3rem;
+  }
 }
