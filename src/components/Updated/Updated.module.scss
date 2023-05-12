@@ -23,6 +23,10 @@
     color: var(--co-green);
     border: none;
   }
+
+  @media screen and (min-width: $tablet-l) {
+    color: var(--co-white);
+  }
 }
 
 .icon {

@@ -11,8 +11,22 @@
     padding-bottom: var(--in-xl);
   }
 
-  @media screen and (orientation: landscape) and (min-height: 650px) {
-    padding-top: var(--in-xl);
+  @media screen and (orientation: landscape) and (min-height: 600px) {
+    padding-top: var(--in-l);
+  }
+
+  @media screen and (min-width: $tablet-l) {
+    background-image: linear-gradient(
+        180deg,
+        #000000cc 9.08%,
+        #00000099 44.82%,
+        #00000080 76.86%,
+        #00000000 100%
+      ),
+      url('../../public/bg.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -36,9 +50,15 @@
   }
 
   @media screen and (min-width: $tablet-m) {
-    max-width: 1100px;
+    max-width: 1150px;
     min-height: unset;
     padding: 0 var(--in-m);
+  }
+
+  @media screen and (min-width: $tablet-l) {
+    padding: 0 var(--in-l);
+    backdrop-filter: blur(5px);
+    background-color: #ffffff1b;
   }
 }
 

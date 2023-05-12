@@ -10,6 +10,10 @@
     margin-bottom: 0;
     border-bottom: none;
   }
+
+  @media screen and (min-width: $tablet-l) {
+    background-color: var(--co-green);
+  }
 }
 
 .text {

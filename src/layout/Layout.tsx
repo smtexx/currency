@@ -14,7 +14,7 @@ export default function Layout({ children }: Props) {
         <Header />
         <main className={s.main}>{children}</main>
         <Footer />
-        {/* <Notification /> */}
+        <Notification />
       </div>
     </div>
   );

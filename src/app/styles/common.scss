@@ -49,6 +49,11 @@ body {
   @media screen and (min-width: $tablet-m) {
     row-gap: var(--in-s);
   }
+
+  @media screen and (min-width: $tablet-l) {
+    color: var(--co-black);
+    background-color: #ffffffa7;
+  }
 }
 
 .cm-inner-block {
@@ -142,4 +147,8 @@ body {
   border: 2px solid var(--co-green);
   background-color: var(--co-white);
   z-index: var(--lr-content-s);
+
+  @media screen and (min-width: $tablet-l) {
+    background-color: #c4c4c4;
+  }
 }
