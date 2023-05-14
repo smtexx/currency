@@ -1,13 +1,34 @@
 .wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: var(--in-l);
+  color: var(--co-white);
+  background-color: var(--co-green);
+  z-index: var(--lr-alert);
+}
+
+.loader {
+  font-size: 6rem;
+  animation: soar 1s ease-in-out infinite alternate;
 }
 
 .text {
-  font-weight: 700;
-  font-size: var(--fz-l);
+  position: relative;
+  margin-top: 3rem;
+  font-size: var(--fz-xl);
+}
+
+@keyframes soar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20%);
+  }
 }

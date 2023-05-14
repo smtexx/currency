@@ -128,3 +128,9 @@ meter {
 :where(dialog:modal) {
   all: revert;
 }
+
+dialog {
+  padding: 0;
+  border: none;
+  outline: none;
+}

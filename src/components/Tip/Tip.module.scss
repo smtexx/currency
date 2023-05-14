@@ -1,38 +1,48 @@
 @import '../../app/styles/breakpoints.scss';
 
 .wrapper {
-  position: relative;
-  padding: 0 var(--in-m) var(--in-l);
+  max-width: 400px;
+  margin-left: 1rem;
+  margin-right: 1rem;
   border-radius: var(--rad-m);
-  border: 2px solid var(--co-green-l);
+
+  @media screen and (min-width: $phone-s) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    max-width: 560px;
+  }
+
+  &::backdrop {
+    background-color: #2d2d2db6;
+    backdrop-filter: blur(2px);
+  }
+}
+
+.header {
+  padding: var(--in-l) var(--in-xl);
+  font-size: var(--fz-xl);
+  font-weight: 700;
+  border-bottom: 2px solid #6b80683d;
+}
+
+.message {
+  padding: var(--in-l) var(--in-m);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--in-xs);
+}
+
+.controls {
+  padding: var(--in-m);
+  text-align: right;
+  background-color: #6b80683d;
 }
 
 .close {
-  color: var(--co-white);
-  margin: 0 -1rem 0 auto;
-
-  @media screen and (min-width: $phone-xs) {
-    padding: var(--in-s);
-  }
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  color: var(--co-green-l);
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--in-m);
-  margin-top: var(--in-l);
-  color: var(--co-white);
-
-  @media screen and (min-width: $phone-xs) {
-    margin-top: var(--in-xl);
-    text-indent: var(--in-xl);
-  }
+  padding: 0.5rem var(--in-m) !important;
+  font-family: var(--ff-main) !important;
+  font-size: var(--fz-l) !important;
 }
