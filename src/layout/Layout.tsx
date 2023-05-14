@@ -2,6 +2,7 @@ import Tip from '../components/Tip/Tip';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import s from './Layout.module.scss';
+import Loader from '../components/Loader/Loader';
 
 interface Props {
   children: React.ReactNode;
@@ -25,6 +26,7 @@ export default function Layout({ children }: Props) {
         ]}
         open={false}
       />
+      {/* <Loader /> */}
     </>
   );
 }
