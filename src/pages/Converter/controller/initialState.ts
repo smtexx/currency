@@ -5,7 +5,7 @@ export const initialState: InitialState = {
   base: 'EUR',
   currencyIO: [
     { currency: 'EUR', value: '1' },
-    { currency: 'RSD', value: '0' },
+    { currency: 'RSD', value: '117.5' },
   ],
   rates: null,
 };
