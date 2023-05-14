@@ -5,7 +5,7 @@ import s from './CurrencyIO.module.scss';
 
 export default function CurrencyIO() {
   return (
-    <form className={setClass([['cm-inner-block'], [s.wrapper]])}>
+    <form className={setClass([['cm-inner-block']])}>
       <label className={s.label} htmlFor="currencyValue">
         Евро
       </label>
