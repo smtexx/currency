@@ -1,6 +1,5 @@
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import Notification from '../components/Notification/Notification';
 import s from './Layout.module.scss';
 
 interface Props {
@@ -14,7 +13,6 @@ export default function Layout({ children }: Props) {
         <Header />
         <main className={s.main}>{children}</main>
         <Footer />
-        <Notification />
       </div>
     </div>
   );
