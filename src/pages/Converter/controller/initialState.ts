@@ -1,11 +1,11 @@
-import { InitialState } from '../../../types';
+import { ConverterState } from '../../../types';
 
-export const initialState: InitialState = {
+export const initialState: ConverterState = {
   updated: null,
-  base: 'EUR',
   currencyIO: [
     { currency: 'EUR', value: '1' },
     { currency: 'RSD', value: '117.5' },
   ],
   rates: null,
+  userRates: {},
 };
