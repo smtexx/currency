@@ -8,13 +8,17 @@ export interface CurrencyIO {
   currency: Currency;
 }
 
+export type UserRate = [Currency, Currency, number];
+
 export type Rates = {
   [index in Currency]: number;
 };
 
-export interface InitialState {
+export interface ConverterState {
   updated: Updated | null;
-  base: Currency;
   currencyIO: CurrencyIO[];
   rates: Rates | null;
+  userRates: {
+    [key: string]: UserRate;
+  };
 }
