@@ -70,5 +70,11 @@ export function reducer(
     recalculateCurrencies(newState, index);
   }
 
+  if (type === 'CHANGE_CURRENCY') {
+    const { index, currency: to } = payload;
+    const { currency: from, value } = state.currencyIO[index];
+    // Recalculate current block
+  }
+
   return newState;
 }

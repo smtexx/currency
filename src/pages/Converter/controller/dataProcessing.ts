@@ -1,5 +1,10 @@
 import { toFixedString } from '../../../lib/helpers';
-import { ConverterState, UserRate } from '../../../types';
+import {
+  ConverterState,
+  Currency,
+  CurrencyIO,
+  UserRate,
+} from '../../../types';
 
 export function getUserRateHash(rate: UserRate): string {
   return rate.slice(0, 2).sort().join('_');
@@ -21,25 +26,42 @@ export function recalculateCurrencies(
 
     // Get currency TO
     const { currency: to } = state.currencyIO[i];
+    // Get exchange rate
+    const rate = getRate(from, to, state);
+    // Recalculate current block based on value and exchange rate
+    recalculateCurrencyBlock(state.currencyIO[i], value, rate);
+  }
+}
 
-    // Get exchange rate from userRates or rates
-    const userRateHash = getUserRateHash([from, to, 0]);
-    let rate;
+// Returns exchange rate based on userRates and rates
+export function getRate(
+  from: Currency,
+  to: Currency,
+  state: ConverterState
+): number {
+  // Get exchange rate from userRates or rates
+  const userRateHash = getUserRateHash([from, to, 0]);
+  let rate;
 
-    if (userRateHash in state.userRates) {
-      const userRate = state.userRates[userRateHash];
-      rate = userRate[0] === from ? userRate[2] : 1 / userRate[2];
-    } else {
-      rate =
-        state.rates !== null
-          ? state.rates[to] / state.rates[from]
-          : 0;
-    }
+  if (userRateHash in state.userRates) {
+    const userRate = state.userRates[userRateHash];
+    rate = userRate[0] === from ? userRate[2] : 1 / userRate[2];
+  } else {
+    rate =
+      state.rates !== null ? state.rates[to] / state.rates[from] : 0;
+  }
 
-    // Recalculate block value if rate is not 0
-    if (rate !== 0) {
-      const newValue = parseFloat(value) * rate;
-      state.currencyIO[i].value = toFixedString(newValue);
-    }
+  return rate;
+}
+
+// Recalculate block value if rate is not 0
+export function recalculateCurrencyBlock(
+  currencyBlock: CurrencyIO,
+  value: string,
+  rate: number
+): void {
+  if (rate !== 0) {
+    const newValue = parseFloat(value) * rate;
+    currencyBlock.value = toFixedString(newValue);
   }
 }
