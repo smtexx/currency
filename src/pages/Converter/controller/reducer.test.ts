@@ -72,5 +72,19 @@ describe('function reducer:', () => {
       },
     });
     expect(newState.userRates['RUB_USD'][2]).toBe(35.43);
+
+    // Recalculates currency blocks if add user rate
+    newState = reducer(initialState, {
+      type: 'ADD_USER_RATE',
+      payload: {
+        from: 'USD',
+        to: 'RUB',
+        rate: '35',
+      },
+    });
+    expect(newState.userRates['RUB_USD'][2]).toBe(35);
+    expect(newState.currencyIO[0].value).toBe('449737.67');
+    expect(newState.currencyIO[1].value).toBe('34965');
+    expect(newState.currencyIO[2].value).toBe('999');
   });
 });

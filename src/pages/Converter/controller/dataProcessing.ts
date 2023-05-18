@@ -65,3 +65,21 @@ export function recalculateCurrencyBlock(
     currencyBlock.value = toFixedString(newValue);
   }
 }
+
+// If both currencies are used in currency blocks
+// returns index of block "from", otherwise returns -1
+export function isUserRateActive(
+  state: ConverterState,
+  from: Currency,
+  to: Currency
+): number {
+  const fromBlockIndex = state.currencyIO.findIndex(
+    (block) => block.currency === from
+  );
+  const toBlockIndex = state.currencyIO.findIndex(
+    (block) => block.currency === to
+  );
+
+  const isActive = fromBlockIndex !== -1 && toBlockIndex !== -1;
+  return isActive ? fromBlockIndex : -1;
+}

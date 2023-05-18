@@ -11,6 +11,7 @@ import {
 } from '../../../lib/helpers';
 import {
   getUserRateHash,
+  isUserRateActive,
   recalculateCurrencies,
 } from './dataProcessing';
 import { getRate } from './dataProcessing';
@@ -109,6 +110,12 @@ export function reducer(
     // Get hash of user rate object and save it into state
     const hash = getUserRateHash(userRate);
     newState.userRates[hash] = userRate;
+
+    // If there are blocks using user rates, recalculate all
+    const baseIndex = isUserRateActive(newState, from, to);
+    if (baseIndex !== -1) {
+      recalculateCurrencies(newState, baseIndex);
+    }
   }
 
   return newState;
