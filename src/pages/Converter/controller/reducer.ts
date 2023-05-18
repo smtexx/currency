@@ -9,7 +9,10 @@ import {
   clearNumericInput,
   createStateCopy,
 } from '../../../lib/helpers';
-import { recalculateCurrencies } from './dataProcessing';
+import {
+  getUserRateHash,
+  recalculateCurrencies,
+} from './dataProcessing';
 import { getRate } from './dataProcessing';
 import { recalculateCurrencyBlock } from './dataProcessing';
 
@@ -29,17 +32,13 @@ interface ChangeCurrencyAction {
   };
 }
 
-interface UpdateRatesAction {
-  type: 'UPDATE_RATES';
-  payload: {
-    rates: Rates;
-    updated: Updated;
-  };
-}
-
 interface AddUserRateAction {
   type: 'ADD_USER_RATE';
-  payload: UserRate;
+  payload: {
+    from: Currency;
+    to: Currency;
+    rate: string;
+  };
 }
 
 interface RemoveUserRateAction {
@@ -47,6 +46,14 @@ interface RemoveUserRateAction {
   payload: {
     from: Currency;
     to: Currency;
+  };
+}
+
+interface UpdateRatesAction {
+  type: 'UPDATE_RATES';
+  payload: {
+    rates: Rates;
+    updated: Updated;
   };
 }
 
@@ -86,6 +93,22 @@ export function reducer(
 
     // Recalculate corresponding currency block
     recalculateCurrencyBlock(currencyBlock, value, rate);
+  }
+
+  if (type === 'ADD_USER_RATE') {
+    // Extract data
+    const { from, to, rate } = payload;
+
+    // Create new UserRate object
+    const userRate = [
+      from,
+      to,
+      parseFloat(clearNumericInput(rate)),
+    ] as UserRate;
+
+    // Get hash of user rate object and save it into state
+    const hash = getUserRateHash(userRate);
+    newState.userRates[hash] = userRate;
   }
 
   return newState;

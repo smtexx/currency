@@ -49,4 +49,28 @@ describe('function reducer:', () => {
     });
     expect(newState.currencyIO[1].value).toBe('12.18');
   });
+
+  it('Process ADD_USER_RATE action', () => {
+    // Add new user rate
+    let newState = reducer(initialState, {
+      type: 'ADD_USER_RATE',
+      payload: {
+        from: 'GBP',
+        to: 'THB',
+        rate: '34,568',
+      },
+    });
+    expect(newState.userRates['GBP_THB'][2]).toBe(34.568);
+
+    // Change exist user rate
+    newState = reducer(initialState, {
+      type: 'ADD_USER_RATE',
+      payload: {
+        from: 'RUB',
+        to: 'USD',
+        rate: '035,430',
+      },
+    });
+    expect(newState.userRates['RUB_USD'][2]).toBe(35.43);
+  });
 });
