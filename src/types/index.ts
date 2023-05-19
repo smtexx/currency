@@ -1,7 +1,10 @@
 import { currencyNames } from '../data/currencyNames';
 
-export type Currency = keyof typeof currencyNames;
 export type Updated = number;
+
+export type ConverterStatus = 'UPDATING' | 'READY' | 'ERROR';
+
+export type Currency = keyof typeof currencyNames;
 
 export interface CurrencyIO {
   value: string;
@@ -16,6 +19,7 @@ export type Rates = {
 
 export interface ConverterState {
   updated: Updated | null;
+  status: ConverterStatus;
   currencyIO: CurrencyIO[];
   rates: Rates | null;
   userRates: {

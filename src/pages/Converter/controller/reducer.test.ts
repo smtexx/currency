@@ -5,6 +5,7 @@ import { reducer } from './reducer';
 describe('function reducer:', () => {
   const initialState: ConverterState = {
     updated: null,
+    status: 'UPDATING',
     currencyIO: [
       { currency: 'KZT', value: '999' },
       { currency: 'RUB', value: '999' },
