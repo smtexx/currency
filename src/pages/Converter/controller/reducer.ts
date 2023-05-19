@@ -118,5 +118,21 @@ export function reducer(
     }
   }
 
+  if (type === 'REMOVE_USER_RATE') {
+    // Extract data
+    const { from, to } = payload;
+
+    const baseIndex = isUserRateActive(newState, from, to);
+    console.log(baseIndex, from, to);
+
+    const hash = getUserRateHash([from, to, 0]);
+    delete newState.userRates[hash];
+
+    // If removed user rate was active, recalculate currency blocks
+    if (baseIndex !== -1) {
+      recalculateCurrencies(newState, baseIndex);
+    }
+  }
+
   return newState;
 }

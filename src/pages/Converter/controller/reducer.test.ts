@@ -1,3 +1,4 @@
+import { createStateCopy } from '../../../lib/helpers';
 import { ConverterState, Rates } from '../../../types';
 import { reducer } from './reducer';
 
@@ -86,5 +87,35 @@ describe('function reducer:', () => {
     expect(newState.currencyIO[0].value).toBe('449737.67');
     expect(newState.currencyIO[1].value).toBe('34965');
     expect(newState.currencyIO[2].value).toBe('999');
+  });
+
+  it('Process REMOVE_USER_RATE action', () => {
+    // Racalculates currency blocks if user rate was active
+    let newState = reducer(initialState, {
+      type: 'REMOVE_USER_RATE',
+      payload: {
+        from: 'USD',
+        to: 'RUB',
+      },
+    });
+    expect(newState.currencyIO[0].value).toBe('449737.67');
+    expect(newState.currencyIO[1].value).toBe('80203.23');
+    expect(newState.currencyIO[2].value).toBe('999');
+    expect('RUB_USD' in newState.userRates).toBe(false);
+
+    let localState = createStateCopy(initialState);
+    localState.userRates['EUR_KZT'] = ['EUR', 'KZT', 480];
+    newState = reducer(localState, {
+      type: 'REMOVE_USER_RATE',
+      payload: {
+        from: 'EUR',
+        to: 'KZT',
+      },
+    });
+
+    expect(newState.currencyIO[0].value).toBe('999');
+    expect(newState.currencyIO[1].value).toBe('999');
+    expect(newState.currencyIO[2].value).toBe('999');
+    expect('EUR_KZT' in newState.userRates).toBe(false);
   });
 });
