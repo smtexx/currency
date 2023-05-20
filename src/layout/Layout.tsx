@@ -26,7 +26,7 @@ export default function Layout({ children }: Props) {
         ]}
         open={false}
       />
-      {/* <Loader /> */}
+      <Loader />
     </>
   );
 }
