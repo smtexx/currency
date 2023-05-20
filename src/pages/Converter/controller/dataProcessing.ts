@@ -47,8 +47,16 @@ export function getRate(
     const userRate = state.userRates[userRateHash];
     rate = userRate[0] === from ? userRate[2] : 1 / userRate[2];
   } else {
-    rate =
-      state.rates !== null ? state.rates[to] / state.rates[from] : 0;
+    if (
+      state.rates === null ||
+      !state.rates[from] ||
+      !state.rates[to]
+    ) {
+      return 1;
+    }
+    return (
+      (state.rates[to] as number) / (state.rates[from] as number)
+    );
   }
 
   return rate;
