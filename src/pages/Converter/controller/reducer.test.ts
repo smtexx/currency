@@ -1,11 +1,16 @@
 import { createStateCopy } from '../../../lib/helpers';
-import { ConverterState, Rates } from '../../../types';
+import {
+  ConverterState,
+  ConverterStatus,
+  Rates,
+  Updated,
+} from '../../../types';
 import { reducer } from './reducer';
 
 describe('function reducer:', () => {
   const initialState: ConverterState = {
     updated: null,
-    status: 'UPDATING',
+    status: ConverterStatus.UPDATING,
     currencyIO: [
       { currency: 'KZT', value: '999' },
       { currency: 'RUB', value: '999' },
@@ -118,5 +123,41 @@ describe('function reducer:', () => {
     expect(newState.currencyIO[1].value).toBe('999');
     expect(newState.currencyIO[2].value).toBe('999');
     expect('EUR_KZT' in newState.userRates).toBe(false);
+  });
+
+  it('Process UPDATE_STATUS action', () => {
+    const stateCopy = createStateCopy(initialState);
+    stateCopy.rates = null;
+
+    const rates = { EUR: 0.98, USD: 1.1 } as Rates;
+    const updated = 194763578 as Updated;
+
+    let newState = reducer(stateCopy, {
+      type: 'UPDATE_STATUS',
+      payload: {
+        status: ConverterStatus.ERROR,
+      },
+    });
+    expect(newState.status).toBe(ConverterStatus.ERROR);
+
+    newState = reducer(stateCopy, {
+      type: 'UPDATE_STATUS',
+      payload: {
+        status: ConverterStatus.UPDATING,
+      },
+    });
+    expect(newState.status).toBe(ConverterStatus.UPDATING);
+
+    newState = reducer(stateCopy, {
+      type: 'UPDATE_STATUS',
+      payload: {
+        status: ConverterStatus.READY,
+        rates,
+        updated,
+      },
+    });
+    expect(newState.status).toBe(ConverterStatus.READY);
+    expect(newState.updated).toBe(updated);
+    expect(newState.rates).toEqual(rates);
   });
 });

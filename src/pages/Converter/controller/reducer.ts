@@ -1,5 +1,6 @@
 import {
   ConverterState,
+  ConverterStatus,
   Currency,
   Rates,
   Updated,
@@ -50,12 +51,19 @@ interface RemoveUserRateAction {
   };
 }
 
+type UpdateRatesActionPayload =
+  | {
+      status: ConverterStatus.READY;
+      rates: Rates;
+      updated: Updated;
+    }
+  | {
+      status: ConverterStatus.ERROR | ConverterStatus.UPDATING;
+    };
+
 interface UpdateRatesAction {
-  type: 'UPDATE_RATES';
-  payload: {
-    rates: Rates;
-    updated: Updated;
-  };
+  type: 'UPDATE_STATUS';
+  payload: UpdateRatesActionPayload;
 }
 
 export function reducer(
@@ -131,6 +139,22 @@ export function reducer(
     // If removed user rate was active, recalculate currency blocks
     if (baseIndex !== -1) {
       recalculateCurrencies(newState, baseIndex);
+    }
+  }
+
+  if (type === 'UPDATE_STATUS') {
+    if (payload.status === ConverterStatus.READY) {
+      const { rates, updated } = payload;
+
+      // Save loaded rate and last update date
+      newState.status = ConverterStatus.READY;
+      newState.updated = updated;
+      newState.rates = rates;
+
+      // Recalculate currency blocks by index 0
+      recalculateCurrencies(newState, 0);
+    } else {
+      newState.status = payload.status;
     }
   }
 
