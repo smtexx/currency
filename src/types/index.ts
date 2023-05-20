@@ -2,7 +2,11 @@ import { currencyNames } from '../data/currencyNames';
 
 export type Updated = number;
 
-export type ConverterStatus = 'UPDATING' | 'READY' | 'ERROR';
+export enum ConverterStatus {
+  UPDATING = 'UPDATING',
+  READY = 'READY',
+  ERROR = 'ERROR',
+}
 
 export type Currency = keyof typeof currencyNames;
 
