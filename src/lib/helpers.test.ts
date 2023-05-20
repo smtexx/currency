@@ -1,7 +1,6 @@
 import {
   clearNumericInput,
   createStateCopy,
-  safeParseFloat,
   setClass,
   toFixedString,
 } from './helpers';
@@ -63,17 +62,6 @@ describe('function clearNumericInput:', () => {
       clearNumericInput(`dfdhf
     .sgss7`)
     ).toBe('0.7');
-  });
-});
-
-describe('function safeParseFloat:', () => {
-  it('Returns correct value', () => {
-    expect(safeParseFloat('0.543')).toBe(0.543);
-    expect(safeParseFloat('543')).toBe(543);
-    expect(safeParseFloat('543.56')).toBe(543.56);
-    expect(safeParseFloat('543,56')).toBe(0);
-    expect(safeParseFloat('x543,56')).toBe(0);
-    expect(safeParseFloat('hello')).toBe(0);
   });
 });
 
