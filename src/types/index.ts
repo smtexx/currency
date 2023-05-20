@@ -18,7 +18,7 @@ export interface CurrencyIO {
 export type UserRate = [Currency, Currency, number];
 
 export type Rates = {
-  [index in Currency]: number;
+  [index in Currency]?: number;
 };
 
 export interface ConverterState {
