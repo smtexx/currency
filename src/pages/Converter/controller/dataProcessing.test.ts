@@ -1,4 +1,8 @@
-import { ConverterState, Rates } from '../../../types';
+import {
+  ConverterState,
+  ConverterStatus,
+  Rates,
+} from '../../../types';
 import {
   getUserRateHash,
   recalculateCurrencies,
@@ -15,6 +19,7 @@ describe('function getUserRateHash:', () => {
 describe('function recalculateCurrencies:', () => {
   it('Correct recalculates CurrencyIO blocks by passed index', () => {
     const state: ConverterState = {
+      status: ConverterStatus.UPDATING,
       updated: null,
       currencyIO: [
         { currency: 'RSD', value: '500' },
@@ -43,6 +48,7 @@ describe('function recalculateCurrencies:', () => {
 
   it('Correct recalculates CurrencyIO blocks with user rate', () => {
     const state: ConverterState = {
+      status: ConverterStatus.UPDATING,
       updated: null,
       currencyIO: [
         { currency: 'RSD', value: '999' },
@@ -60,6 +66,7 @@ describe('function recalculateCurrencies:', () => {
 
   it('Correct recalculates CurrencyIO blocks with reverce user rate', () => {
     const state: ConverterState = {
+      status: ConverterStatus.UPDATING,
       updated: null,
       currencyIO: [
         { currency: 'RSD', value: '235' },
