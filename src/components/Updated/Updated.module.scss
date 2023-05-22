@@ -29,9 +29,27 @@
   }
 }
 
+.error {
+  border-color: red;
+  background-color: red;
+}
+
 .icon {
   display: flex;
   font-size: var(--fz-xxl);
+}
+
+.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .button {
