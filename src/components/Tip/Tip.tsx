@@ -1,14 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import s from './Tip.module.scss';
 import { setClass } from '../../lib/helpers';
+import { ConverterContext } from '../../app/Converter/controller/context';
 
-interface Props {
-  open: boolean;
-  title: string;
-  text: string[];
-}
+export default function Tip() {
+  const { state, dispatch } = useContext(ConverterContext);
+  const open = Array.isArray(state.tip);
 
-export default function Tip({ title, open, text }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -28,10 +26,10 @@ export default function Tip({ title, open, text }: Props) {
   return (
     <dialog className={s.wrapper} ref={dialogRef}>
       <header className={s.header}>
-        <h2 className={s.title}>{title}</h2>
+        <h2 className={s.title}>Подсказка</h2>
       </header>
       <div className={s.message}>
-        {text.map((part, idx) => (
+        {state.tip?.map((part, idx) => (
           <p key={idx}>{part}</p>
         ))}
       </div>
@@ -39,6 +37,9 @@ export default function Tip({ title, open, text }: Props) {
         <button
           className={setClass([[s.close], ['cm-input']])}
           type="button"
+          onClick={() =>
+            dispatch({ type: 'HIDE_TIP', payload: null })
+          }
         >
           Понятно
         </button>

@@ -18,14 +18,7 @@ export default function Layout({ children }: Props) {
           <Footer />
         </div>
       </div>
-      <Tip
-        title="Подсказка"
-        text={[
-          `А здесь будет очень интересная подсказка о пользовании интерфейсом`,
-          `Еще один параграф очень интересного текста`,
-        ]}
-        open={false}
-      />
+      <Tip />
       <Loader />
     </>
   );
