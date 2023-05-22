@@ -18,7 +18,7 @@ import {
 import { getRate } from './dataProcessing';
 import { recalculateCurrencyBlock } from './dataProcessing';
 
-interface ChangeValueAction {
+export interface ChangeValueAction {
   type: 'CHANGE_VALUE';
   payload: {
     index: number;
@@ -26,7 +26,7 @@ interface ChangeValueAction {
   };
 }
 
-interface ChangeCurrencyAction {
+export interface ChangeCurrencyAction {
   type: 'CHANGE_CURRENCY';
   payload: {
     index: number;
@@ -34,7 +34,7 @@ interface ChangeCurrencyAction {
   };
 }
 
-interface AddUserRateAction {
+export interface AddUserRateAction {
   type: 'ADD_USER_RATE';
   payload: {
     from: Currency;
@@ -43,7 +43,7 @@ interface AddUserRateAction {
   };
 }
 
-interface RemoveUserRateAction {
+export interface RemoveUserRateAction {
   type: 'REMOVE_USER_RATE';
   payload: {
     from: Currency;
@@ -61,7 +61,7 @@ type UpdateRatesActionPayload =
       status: ConverterStatus.ERROR | ConverterStatus.UPDATING;
     };
 
-interface UpdateRatesAction {
+export interface UpdateRatesAction {
   type: 'UPDATE_STATUS';
   payload: UpdateRatesActionPayload;
 }
