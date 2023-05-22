@@ -66,6 +66,18 @@ export interface UpdateRatesAction {
   payload: UpdateRatesActionPayload;
 }
 
+export interface ShowTipAction {
+  type: 'SHOW_TIP';
+  payload: {
+    text: string[];
+  };
+}
+
+export interface HideTipAction {
+  type: 'HIDE_TIP';
+  payload: null;
+}
+
 export function reducer(
   state: ConverterState,
   action:
@@ -74,6 +86,8 @@ export function reducer(
     | UpdateRatesAction
     | AddUserRateAction
     | RemoveUserRateAction
+    | ShowTipAction
+    | HideTipAction
 ): ConverterState {
   const newState = createStateCopy(state);
   const { type, payload } = action;
@@ -156,6 +170,14 @@ export function reducer(
     } else {
       newState.status = payload.status;
     }
+  }
+
+  if (type === 'SHOW_TIP') {
+    newState.tip = payload.text;
+  }
+
+  if (type === 'HIDE_TIP') {
+    newState.tip = null;
   }
 
   return newState;

@@ -7,6 +7,8 @@ import {
   UpdateRatesAction,
   AddUserRateAction,
   RemoveUserRateAction,
+  ShowTipAction,
+  HideTipAction,
 } from './reducer';
 
 export const ConverterContext = createContext<{
@@ -17,6 +19,8 @@ export const ConverterContext = createContext<{
     | UpdateRatesAction
     | AddUserRateAction
     | RemoveUserRateAction
+    | ShowTipAction
+    | HideTipAction
   >;
 }>({
   state: initialState,
