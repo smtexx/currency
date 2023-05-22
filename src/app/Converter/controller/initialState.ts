@@ -10,4 +10,5 @@ export const initialState: ConverterState = {
   ],
   rates: null,
   userRates: {},
+  tip: null,
 };

@@ -28,6 +28,7 @@ describe('function recalculateCurrencies:', () => {
       ],
       rates: { EUR: 0.9218, RSD: 107.8928, USD: 1 } as Rates,
       userRates: {},
+      tip: null,
     };
     // Recalculate value by index 1
     recalculateCurrencies(state, 1);
@@ -57,6 +58,7 @@ describe('function recalculateCurrencies:', () => {
       ],
       rates: { EUR: 0.9218, RSD: 107.8928, USD: 1 } as Rates,
       userRates: { EUR_RSD: ['EUR', 'RSD', 117.5] },
+      tip: null,
     };
     recalculateCurrencies(state, 1);
     expect(state.currencyIO[0].value).toBe('117.5');
@@ -75,6 +77,7 @@ describe('function recalculateCurrencies:', () => {
       ],
       rates: { EUR: 0.9218, RSD: 107.8928, USD: 1 } as Rates,
       userRates: { EUR_RSD: ['EUR', 'RSD', 117.5] },
+      tip: null,
     };
     recalculateCurrencies(state, 0);
     expect(state.currencyIO[0].value).toBe('235');

@@ -23,6 +23,7 @@ describe('function reducer:', () => {
       EUR: 0.923331,
     } as Rates,
     userRates: { RUB_USD: ['USD', 'RUB', 82] },
+    tip: null,
   };
 
   it('Process CHANGE_VALUE action', () => {

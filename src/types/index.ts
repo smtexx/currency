@@ -29,4 +29,5 @@ export interface ConverterState {
   userRates: {
     [key: string]: UserRate;
   };
+  tip: string[] | null;
 }
