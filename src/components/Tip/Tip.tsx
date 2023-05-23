@@ -5,13 +5,14 @@ import { ConverterContext } from '../../app/Converter/controller/context';
 
 export default function Tip() {
   const { state, dispatch } = useContext(ConverterContext);
-  const open = Array.isArray(state.tip);
-
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const open = state.tip !== null;
 
   useEffect(() => {
     if (dialogRef.current !== null) {
       const dialog = dialogRef.current;
+
       if (!dialog.open && open) {
         dialog.showModal();
         document.body.style.overflowY = 'hidden';
@@ -21,7 +22,7 @@ export default function Tip() {
         document.body.style.overflowY = '';
       }
     }
-  }, [open, dialogRef]);
+  }, [open]);
 
   return (
     <dialog className={s.wrapper} ref={dialogRef}>
