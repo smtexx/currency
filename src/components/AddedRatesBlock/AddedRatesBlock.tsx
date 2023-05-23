@@ -8,7 +8,13 @@ export default function AddedRatesBlock() {
     <div className={setClass([['cm-outer-block'], [s.wrapper]])}>
       <div className="cm-outer-block-header">
         <h2>Сохраненные курсы</h2>
-        <HelpButton />
+        <HelpButton
+          text={[
+            `Здесь показаны сохраненные пользовательские курсы. Расчет обменного
+          курса соответствующих валют происходит с их использованием.`,
+            `Вы можете удалить любой пользовательский курс нажав на кнопку справа в строке курса.`,
+          ]}
+        />
       </div>
       <UserRatesAdded />
     </div>
