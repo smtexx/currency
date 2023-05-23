@@ -2,6 +2,6 @@
 
 .wrapper {
   @media screen and (max-width: $tablet-m - 1) {
-    display: none;
+    display: none !important;
   }
 }
