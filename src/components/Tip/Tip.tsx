@@ -16,11 +16,11 @@ export default function Tip({ title, open, text }: Props) {
       const dialog = dialogRef.current;
       if (!dialog.open && open) {
         dialog.showModal();
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
       }
       if (dialog.open && !open) {
         dialog.close();
-        document.body.style.overflow = '';
+        document.body.style.overflowY = '';
       }
     }
   }, [open, dialogRef]);
