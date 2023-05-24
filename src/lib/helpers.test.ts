@@ -1,4 +1,5 @@
 import {
+  cashData,
   clearNumericInput,
   createStateCopy,
   setClass,
@@ -72,5 +73,22 @@ describe('function toFixedString:', () => {
     expect(toFixedString(456.05)).toBe('456.05');
     expect(toFixedString(456.0567)).toBe('456.06');
     expect(toFixedString(456.0)).toBe('456');
+  });
+});
+
+describe('function cashData:', () => {
+  it('Cash value in localstorage', () => {
+    localStorage.clear();
+
+    const key = 'TESTING_KEY';
+    const value = { flag: 'Flag' };
+    cashData(key, value);
+
+    expect(cashData(key)).toEqual(value);
+    localStorage.clear();
+  });
+
+  it('Returns null if key does not exist', () => {
+    expect(cashData('TESTING_KEY')).toBe(null);
   });
 });

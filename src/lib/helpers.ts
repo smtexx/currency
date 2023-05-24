@@ -84,3 +84,20 @@ export function clearNumericInput(value: string): string {
 export function toFixedString(value: number): string {
   return value.toFixed(2).replace(/\.?0*$/, '');
 }
+
+// Cash data in localstorage
+export function cashData(key: string): unknown;
+export function cashData(key: string, data: any): void;
+export function cashData(key: string, data?: any) {
+  if (!localStorage) {
+    throw new Error('Localstorage is not available for cashing');
+  }
+
+  if (!data) {
+    const storedData = localStorage.getItem(key);
+    return storedData !== null ? JSON.parse(storedData) : null;
+  }
+
+  const dataString = JSON.stringify(data);
+  localStorage.setItem(key, dataString);
+}
