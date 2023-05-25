@@ -51,7 +51,7 @@ export interface RemoveUserRateAction {
   };
 }
 
-type UpdateRatesActionPayload =
+export type UpdateRatesActionPayload =
   | {
       status: ConverterStatus.READY;
       rates: Rates;
