@@ -132,21 +132,23 @@ export function reducer(
     // Extract data
     const { from, to, rate } = payload;
 
-    // Create new UserRate object
-    const userRate = [
-      from,
-      to,
-      parseFloat(clearNumericInput(rate)),
-    ] as UserRate;
+    if (from !== to) {
+      // Create new UserRate object
+      const userRate = [
+        from,
+        to,
+        parseFloat(clearNumericInput(rate)),
+      ] as UserRate;
 
-    // Get hash of user rate object and save it into state
-    const hash = getUserRateHash(userRate);
-    newState.userRates[hash] = userRate;
+      // Get hash of user rate object and save it into state
+      const hash = getUserRateHash(userRate);
+      newState.userRates[hash] = userRate;
 
-    // If there are blocks using user rates, recalculate all
-    const baseIndex = isUserRateActive(newState, from, to);
-    if (baseIndex !== -1) {
-      recalculateCurrencies(newState, baseIndex);
+      // If there are blocks using user rates, recalculate all
+      const baseIndex = isUserRateActive(newState, from, to);
+      if (baseIndex !== -1) {
+        recalculateCurrencies(newState, baseIndex);
+      }
     }
   }
 
