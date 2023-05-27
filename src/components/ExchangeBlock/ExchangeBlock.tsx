@@ -1,8 +1,12 @@
 import CurrencyIO from '../CurrencyIO/CurrencyIO';
 import { setClass } from '../../lib/helpers';
 import HelpButton from '../HelpButton/HelpButton';
+import { useContext } from 'react';
+import { ConverterContext } from '../../app/Converter/controller/context';
 
 export default function ExchangeBlock() {
+  const { state, dispatch } = useContext(ConverterContext);
+
   return (
     <div className={setClass([['cm-outer-block']])}>
       <div className="cm-outer-block-header">
@@ -18,8 +22,14 @@ export default function ExchangeBlock() {
           ]}
         />
       </div>
-      <CurrencyIO />
-      <CurrencyIO />
+      {state.currencyIO.map((config, idx) => (
+        <CurrencyIO
+          key={idx}
+          index={idx}
+          dispatch={dispatch}
+          {...config}
+        />
+      ))}
     </div>
   );
 }
