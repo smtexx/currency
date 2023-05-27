@@ -78,6 +78,16 @@ export interface HideTipAction {
   payload: null;
 }
 
+export type Dispatch = React.Dispatch<
+  | ChangeValueAction
+  | ChangeCurrencyAction
+  | UpdateRatesAction
+  | AddUserRateAction
+  | RemoveUserRateAction
+  | ShowTipAction
+  | HideTipAction
+>;
+
 export function reducer(
   state: ConverterState,
   action:
