@@ -23,9 +23,13 @@
 
 .header {
   padding: var(--in-l) var(--in-xl);
-  font-size: var(--fz-xl);
+  font-size: var(--fz-xxl);
   font-weight: 700;
   border-bottom: 2px solid #6b80683d;
+
+  @media screen and (min-width: $tablet-m) {
+    font-size: var(--fz-xl);
+  }
 }
 
 .message {
