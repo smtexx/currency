@@ -11,6 +11,10 @@
 }
 
 .wrapper {
+  @media screen and (min-width: $tablet-m) {
+    flex: 1 1 auto;
+  }
+
   :global(.cm-direction-icon) {
     @media screen and (min-width: $tablet-m) {
       display: none;
@@ -27,5 +31,9 @@
   @media screen and (min-width: $phone-xs) {
     padding: 0.75rem var(--in-l) !important;
     font-size: 1.15rem !important;
+  }
+
+  @media screen and (min-width: $tablet-m) {
+    margin-top: auto;
   }
 }
