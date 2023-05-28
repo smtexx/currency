@@ -55,6 +55,7 @@ export default function Selector({
   function onChangeSearchValue(
     e: React.ChangeEvent<HTMLInputElement>
   ) {
+    setSearchValue('');
     setSearchValue(e.target.value);
   }
   // If user clicks on currency button in popup menu
