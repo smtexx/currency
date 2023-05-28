@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/currency/static/css/main.10c7201b.css",
+    "main.js": "/currency/static/js/main.89ddbeb7.js",
+    "static/js/787.ca7f2fcd.chunk.js": "/currency/static/js/787.ca7f2fcd.chunk.js",
+    "static/media/bg.jpg": "/currency/static/media/bg.5515fd51048265016559.jpg",
+    "static/media/subset-Philosopher-Regular.woff": "/currency/static/media/subset-Philosopher-Regular.4f3ffb7dda8073a0364f.woff",
+    "static/media/subset-Philosopher-Bold.woff": "/currency/static/media/subset-Philosopher-Bold.031efafc4ffb466087eb.woff",
+    "static/media/subset-Philosopher-Regular.woff2": "/currency/static/media/subset-Philosopher-Regular.09964a551b39b9830172.woff2",
+    "static/media/subset-Philosopher-Bold.woff2": "/currency/static/media/subset-Philosopher-Bold.f398cb05dd40f30d2daf.woff2",
+    "static/media/subset-SpaceMono-Regular.woff": "/currency/static/media/subset-SpaceMono-Regular.e5d07c15c8e1f790394f.woff",
+    "static/media/subset-GrenzeGotisch-Bold.woff": "/currency/static/media/subset-GrenzeGotisch-Bold.83e226bced8b4e5d72b6.woff",
+    "static/media/subset-SpaceMono-Regular.woff2": "/currency/static/media/subset-SpaceMono-Regular.39d6f5808e716ba962a7.woff2",
+    "static/media/subset-GrenzeGotisch-Bold.woff2": "/currency/static/media/subset-GrenzeGotisch-Bold.ba3bf42548a6b7faccfb.woff2",
+    "index.html": "/currency/index.html",
+    "main.10c7201b.css.map": "/currency/static/css/main.10c7201b.css.map",
+    "main.89ddbeb7.js.map": "/currency/static/js/main.89ddbeb7.js.map",
+    "787.ca7f2fcd.chunk.js.map": "/currency/static/js/787.ca7f2fcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10c7201b.css",
+    "static/js/main.89ddbeb7.js"
+  ]
+}
