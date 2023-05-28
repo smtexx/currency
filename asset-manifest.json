@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/currency/static/css/main.f361ca56.css",
-    "main.js": "/currency/static/js/main.ca8b2554.js",
+    "main.css": "/currency/static/css/main.f8fd2984.css",
+    "main.js": "/currency/static/js/main.66fe695c.js",
     "static/js/787.ca7f2fcd.chunk.js": "/currency/static/js/787.ca7f2fcd.chunk.js",
     "static/media/bg.jpg": "/currency/static/media/bg.5515fd51048265016559.jpg",
     "static/media/subset-Philosopher-Regular.woff": "/currency/static/media/subset-Philosopher-Regular.4f3ffb7dda8073a0364f.woff",
@@ -13,12 +13,12 @@
     "static/media/subset-RussoOne-Regular.woff": "/currency/static/media/subset-RussoOne-Regular.5df0b750eaa28b896a6f.woff",
     "static/media/subset-RussoOne-Regular.woff2": "/currency/static/media/subset-RussoOne-Regular.66a5fa9da97889ed96b0.woff2",
     "index.html": "/currency/index.html",
-    "main.f361ca56.css.map": "/currency/static/css/main.f361ca56.css.map",
-    "main.ca8b2554.js.map": "/currency/static/js/main.ca8b2554.js.map",
+    "main.f8fd2984.css.map": "/currency/static/css/main.f8fd2984.css.map",
+    "main.66fe695c.js.map": "/currency/static/js/main.66fe695c.js.map",
     "787.ca7f2fcd.chunk.js.map": "/currency/static/js/787.ca7f2fcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f361ca56.css",
-    "static/js/main.ca8b2554.js"
+    "static/css/main.f8fd2984.css",
+    "static/js/main.66fe695c.js"
   ]
 }
