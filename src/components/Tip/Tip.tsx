@@ -15,11 +15,14 @@ export default function Tip() {
 
       if (!dialog.open && open) {
         dialog.showModal();
-        document.body.style.overflowY = 'hidden';
+        const bodyWidth = document.body.clientWidth;
+        document.body.style.overflow = 'hidden';
+        document.body.style.width = `${bodyWidth}px`;
       }
       if (dialog.open && !open) {
         dialog.close();
         document.body.style.overflowY = '';
+        document.body.style.width = '';
       }
     }
   }, [open]);
