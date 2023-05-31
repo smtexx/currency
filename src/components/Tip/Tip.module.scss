@@ -1,26 +1,5 @@
 @import '../../app/styles/breakpoints.scss';
 
-.wrapper {
-  max-width: 400px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-radius: var(--rad-m);
-
-  @media screen and (min-width: $phone-s) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media screen and (min-width: $tablet-m) {
-    max-width: 560px;
-  }
-
-  &::backdrop {
-    background-color: #2d2d2db6;
-    backdrop-filter: blur(2px);
-  }
-}
-
 .header {
   padding: var(--in-l) var(--in-xl);
   font-size: var(--fz-xxl);
