@@ -115,12 +115,9 @@ body {
   cursor: pointer;
 }
 
-.cm-input {
-  padding: var(--in-xs) var(--in-s);
+%control {
+  line-height: 1.15;
   color: var(--co-white);
-  line-height: 1;
-  font-family: var(--ff-mono);
-  font-size: var(--fz-s);
   outline: 1px solid var(--co-green);
   outline-offset: 2px;
   background-color: var(--co-green);
@@ -129,6 +126,13 @@ body {
   &:focus {
     outline-width: 2px;
   }
+}
+
+.cm-input {
+  @extend %control;
+  padding: 0.5rem var(--in-s);
+  font-family: var(--ff-mono);
+  font-size: var(--fz-s);
 
   @media screen and (min-width: $phone-xs) {
     font-size: var(--fz-m);
@@ -150,5 +154,15 @@ body {
 
   @media screen and (min-width: $tablet-l) {
     background-color: #c4c4c4;
+  }
+}
+
+.cm-text-button {
+  @extend %control;
+  padding: var(--in-s) var(--in-m);
+  text-align: center;
+
+  @media screen and (min-width: $tablet-m) {
+    padding: 0.5rem var(--in-m);
   }
 }

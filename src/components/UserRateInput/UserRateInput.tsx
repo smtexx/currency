@@ -54,7 +54,7 @@ export default function UserRateInput() {
         />
       </div>
       <button
-        className={setClass([['cm-input'], [s.addButton]])}
+        className={setClass([['cm-text-button'], [s.addButton]])}
         type="button"
         onClick={saveUserRate}
       >
