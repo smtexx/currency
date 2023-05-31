@@ -74,6 +74,23 @@ body {
   }
 }
 
+.cm-dialog-header {
+  padding: var(--in-l) var(--in-xxl);
+  font-size: var(--fz-xxl);
+  font-family: var(--ff-russo);
+  border-bottom: 2px solid #6b80683d;
+
+  @media screen and (min-width: $tablet-m) {
+    font-size: var(--fz-xl);
+  }
+}
+
+.cm-dialog-controls {
+  padding: var(--in-m);
+  text-align: right;
+  background-color: #6b80683d;
+}
+
 .cm-hide-on-tablet-m {
   @media screen and (min-width: $tablet-m) {
     display: none;
@@ -81,7 +98,6 @@ body {
 }
 
 // Links
-
 .cm-link {
   font-weight: 700;
   text-decoration: underline;
@@ -105,7 +121,6 @@ body {
 }
 
 // Buttons
-
 .cm-icon-button {
   display: flex;
   margin-right: -0.375rem;
@@ -139,8 +154,17 @@ body {
   }
 }
 
-// Icons
+.cm-text-button {
+  @extend %control;
+  padding: var(--in-s) var(--in-m);
+  text-align: center;
 
+  @media screen and (min-width: $tablet-m) {
+    padding: 0.5rem var(--in-m);
+  }
+}
+
+// Icons
 .cm-direction-icon {
   position: absolute;
   top: calc(100% - 0.5rem);
@@ -154,15 +178,5 @@ body {
 
   @media screen and (min-width: $tablet-l) {
     background-color: #c4c4c4;
-  }
-}
-
-.cm-text-button {
-  @extend %control;
-  padding: var(--in-s) var(--in-m);
-  text-align: center;
-
-  @media screen and (min-width: $tablet-m) {
-    padding: 0.5rem var(--in-m);
   }
 }

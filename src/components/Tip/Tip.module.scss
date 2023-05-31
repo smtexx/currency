@@ -1,31 +1,9 @@
 @import '../../app/styles/breakpoints.scss';
 
-.header {
-  padding: var(--in-l) var(--in-xl);
-  font-size: var(--fz-xxl);
-  font-weight: 700;
-  border-bottom: 2px solid #6b80683d;
-
-  @media screen and (min-width: $tablet-m) {
-    font-size: var(--fz-xl);
-  }
-}
-
 .message {
   padding: var(--in-l) var(--in-m);
   display: flex;
   flex-direction: column;
   row-gap: var(--in-xs);
-}
-
-.controls {
-  padding: var(--in-m);
-  text-align: right;
-  background-color: #6b80683d;
-}
-
-.close {
-  padding: 0.5rem var(--in-l) !important;
-  font-family: var(--ff-main) !important;
-  font-size: var(--fz-l) !important;
+  font-family: var(--ff-roboto);
 }
