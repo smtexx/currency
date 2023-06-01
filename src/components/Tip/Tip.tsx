@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ConverterContext } from '../../app/Converter/controller/context';
 import Dialog from '../Dialog/Dialog';
 import s from './Tip.module.scss';
+import { setClass } from '../../lib/helpers';
 
 export default function Tip() {
   const { state, dispatch } = useContext(ConverterContext);
@@ -10,9 +11,9 @@ export default function Tip() {
   return (
     <Dialog open={open}>
       <header className="cm-dialog-header">
-        <h2 className={s.title}>Подсказка</h2>
+        <h2>Подсказка</h2>
       </header>
-      <div className={s.message}>
+      <div className={setClass([['cm-dialog-content'], [s.message]])}>
         {state.tip?.map((part, idx) => (
           <p key={idx}>{part}</p>
         ))}

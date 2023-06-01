@@ -1,7 +1,6 @@
 @import '../../app/styles/breakpoints.scss';
 
 .message {
-  padding: var(--in-l) var(--in-m);
   display: flex;
   flex-direction: column;
   row-gap: var(--in-xs);
