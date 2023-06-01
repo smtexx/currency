@@ -4,92 +4,69 @@ import {
   RiLoader4Line,
 } from 'react-icons/ri';
 import s from './Updated.module.scss';
-import HelpButton from '../HelpButton/HelpButton';
 import { useContext } from 'react';
 import { ConverterContext } from '../../app/Converter/controller/context';
 import { ConverterStatus } from '../../types';
 import { setClass } from '../../lib/helpers';
+import Settings from '../Settings/Settings';
+
+type I_RenderData = {
+  [key in ConverterStatus]: {
+    icon: JSX.Element;
+    text: string;
+  };
+};
 
 export default function Updated() {
   const { state } = useContext(ConverterContext);
 
-  if (
-    state.status === ConverterStatus.READY &&
-    typeof state.updated === 'number'
-  ) {
-    const lastUpdate = new Date(state.updated);
-    return (
-      <p className={s.wrapper}>
-        <span className={s.icon}>
-          <RiExchangeDollarFill />
-        </span>{' '}
+  const renderData: I_RenderData = {
+    READY: {
+      icon: <RiExchangeDollarFill />,
+      text: `Обновлено: ${
+        state.updated !== null
+          ? new Date(state.updated)
+              .toLocaleString('ru-RU', {
+                month: '2-digit',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+              })
+              .replace(',', ' -')
+          : ''
+      }`,
+    },
+    ERROR: {
+      icon: <RiAlertLine />,
+      text: 'Ошибка обновления',
+    },
+    UPDATING: {
+      icon: <RiLoader4Line />,
+      text: 'Обновление курсов',
+    },
+  };
+
+  return (
+    <div
+      className={setClass([
+        [s.wrapper],
+        [s.error, state.status === ConverterStatus.ERROR],
+      ])}
+    >
+      <p className={s.message}>
+        <span
+          className={setClass([
+            [s.icon],
+            [s.rotate, state.status === ConverterStatus.UPDATING],
+          ])}
+        >
+          {renderData[state.status].icon}
+        </span>
         <span className={s.text}>
-          Обновлено:{' '}
-          {`${lastUpdate
-            .toLocaleString('ru-RU', {
-              month: '2-digit',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-            })
-            .replace(',', ' -')}`}
-        </span>
-        <span className={s.button}>
-          <HelpButton
-            text={[
-              `Здесь показаны дата и время последнего обновления курсов валют. 
-            Приложение использует бесплатный источник данных (API). Поэтому, данные обновляются
-            только раз в сутки.`,
-              `Платный источник курсов валют обновляется каждый час, но стоит денег :( 
-            Если вы готовы проспонсировать это, свяжитесь с нами. Мы выступаем за бесплатное 
-            свободно распространяемое ПО.`,
-            ]}
-          />
+          {renderData[state.status].text}
         </span>
       </p>
-    );
-  }
-
-  if (state.status === ConverterStatus.ERROR) {
-    return (
-      <p className={setClass([[s.wrapper], [s.error]])}>
-        <span className={s.icon}>
-          <RiAlertLine />
-        </span>{' '}
-        <span className={s.text}>Ошибка обновления</span>
-        <span className={s.button}>
-          <HelpButton
-            text={[
-              `По каким то неведомым причинам, не удалось обновить котировки курсов валют.
-              Нам искренне жаль. Иногда такое случается, мы попробуем разобраться в причинах.`,
-              `Но вы все же можете использовать пользовательские курсы валют для конвертации. 
-              Добавьте их в разделе "Пользовательские курсы"`,
-            ]}
-          />
-        </span>
-      </p>
-    );
-  }
-
-  if (state.status === ConverterStatus.UPDATING) {
-    return (
-      <p className={s.wrapper}>
-        <span className={setClass([[s.icon], [s.rotate]])}>
-          <RiLoader4Line />
-        </span>{' '}
-        <span className={s.text}>Обновление курсов</span>
-        <span className={s.button}>
-          <HelpButton
-            text={[
-              `Прямо сейчас происходит обновление курсов валют с сервера, 
-            пожалуйста, подождите немного. Обычно это происходит довольно быстро, 
-            но зависит от скорости вашего интернет соединения.`,
-            ]}
-          />
-        </span>
-      </p>
-    );
-  }
-
-  return null;
+      <Settings />
+    </div>
+  );
 }

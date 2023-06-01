@@ -3,7 +3,7 @@
 .wrapper {
   display: flex;
   align-items: center;
-  column-gap: var(--in-s);
+  justify-content: space-between;
   padding: var(--in-xs) var(--in-m);
   color: var(--co-white);
   border-radius: var(--rad-m);
@@ -18,7 +18,7 @@
   }
 
   @media screen and (min-width: $tablet-m) {
-    margin-right: -0.55rem;
+    column-gap: var(--in-l);
     padding: 0;
     color: var(--co-green);
     border: none;
@@ -27,6 +27,12 @@
   @media screen and (min-width: $tablet-l) {
     color: var(--co-white);
   }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  column-gap: var(--in-m);
 }
 
 .error {
@@ -49,13 +55,5 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-.button {
-  margin-left: auto;
-
-  @media screen and (min-width: $tablet-m) {
-    margin-left: 3rem;
   }
 }
