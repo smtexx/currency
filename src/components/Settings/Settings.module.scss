@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--in-m);
+}
+
+.tip {
+  font-family: var(--ff-roboto);
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--in-m);
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--in-s);
+    padding: var(--in-m) var(--in-xl) var(--in-m) var(--in-l);
+    border: 2px solid var(--co-green);
+    border-radius: var(--rad-m);
+  }
+
+  legend {
+    padding: 0 var(--in-s);
+    font-size: var(--fz-l);
+    font-weight: 700;
+    color: var(--co-green);
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+}
