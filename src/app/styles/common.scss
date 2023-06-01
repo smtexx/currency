@@ -85,7 +85,14 @@ body {
   }
 }
 
+.cm-dialog-content {
+  padding: var(--in-l) var(--in-m);
+}
+
 .cm-dialog-controls {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: var(--in-l);
   padding: var(--in-m);
   text-align: right;
   background-color: #6b80683d;
@@ -179,4 +186,9 @@ body {
   @media screen and (min-width: $tablet-l) {
     background-color: #c4c4c4;
   }
+}
+
+// Checkbox
+.cm-checkbox {
+  color: transparent;
 }
