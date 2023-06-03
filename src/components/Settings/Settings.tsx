@@ -1,10 +1,10 @@
 import { RiSettings5Line } from 'react-icons/ri';
 import s from './Settings.module.scss';
-import Dialog from '../Dialog/Dialog';
 import { useState } from 'react';
-import { createStateCopy, setClass } from '../../lib/helpers';
+import { createStateCopy } from '../../lib/helpers';
 import { I_SettingsSection, config } from './config';
 import Checkbox from '../Checkbox/Checkbox';
+import CustomDialog from '../CustomDialog/CustomDialog';
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
@@ -33,13 +33,22 @@ export default function Settings() {
       >
         <RiSettings5Line />
       </button>
-      <Dialog open={open}>
-        <header className="cm-dialog-header">
-          <h2>Настройки</h2>
-        </header>
-        <div
-          className={setClass([['cm-dialog-content'], [s.content]])}
-        >
+      <CustomDialog
+        title="Настройки"
+        open={open}
+        controls={
+          <>
+            <button
+              className="cm-text-button"
+              onClick={() => setOpen(false)}
+            >
+              Отмена
+            </button>
+            <button className="cm-text-button">Сохранить</button>
+          </>
+        }
+      >
+        <div className={s.content}>
           <p className={s.tip}>
             Здесь вы можете изменять различные настройки, а также
             управлять сохранением данных приложения.
@@ -77,16 +86,7 @@ export default function Settings() {
             Установить как приложение
           </button>
         </div>
-        <div className="cm-dialog-controls">
-          <button
-            className="cm-text-button"
-            onClick={() => setOpen(false)}
-          >
-            Отмена
-          </button>
-          <button className="cm-text-button">Сохранить</button>
-        </div>
-      </Dialog>
+      </CustomDialog>
     </>
   );
 }
