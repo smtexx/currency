@@ -74,30 +74,6 @@ body {
   }
 }
 
-.cm-dialog-header {
-  padding: var(--in-l) var(--in-xxl);
-  font-size: var(--fz-xxl);
-  font-family: var(--ff-russo);
-  border-bottom: 2px solid #6b80683d;
-
-  @media screen and (min-width: $tablet-m) {
-    font-size: var(--fz-xl);
-  }
-}
-
-.cm-dialog-content {
-  padding: var(--in-l) var(--in-m);
-}
-
-.cm-dialog-controls {
-  display: flex;
-  justify-content: flex-end;
-  column-gap: var(--in-l);
-  padding: var(--in-m);
-  text-align: right;
-  background-color: #6b80683d;
-}
-
 .cm-hide-on-tablet-m {
   @media screen and (min-width: $tablet-m) {
     display: none;
