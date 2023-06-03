@@ -81,10 +81,6 @@ export default function Settings() {
               </fieldset>
             ))}
           </form>
-
-          <button className="cm-text-button">
-            Установить как приложение
-          </button>
         </div>
       </CustomDialog>
     </>
