@@ -1,0 +1,33 @@
+@import '../../app/styles/breakpoints.scss';
+
+.wrapper {
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: var(--in-l) var(--in-xxl);
+  font-size: var(--fz-xxl);
+  font-family: var(--ff-russo);
+  border-bottom: 2px solid #6b80683d;
+
+  @media screen and (min-width: $tablet-m) {
+    font-size: var(--fz-xl);
+  }
+}
+
+.content {
+  padding: var(--in-l) var(--in-m);
+  overflow-y: auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: var(--in-l);
+  padding: var(--in-m);
+  text-align: right;
+  background-color: #6b80683d;
+}
