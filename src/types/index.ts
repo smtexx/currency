@@ -30,4 +30,7 @@ export interface ConverterState {
     [key: string]: UserRate;
   };
   tip: string[] | null;
+  settings: {
+    exchangeBlocks: 2 | 3;
+  };
 }

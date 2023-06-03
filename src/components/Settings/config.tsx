@@ -16,20 +16,20 @@ export interface I_SettingsSection {
 type T_Settings = I_SettingsSection[];
 
 export const config: T_Settings = [
-  {
-    legend: 'Язык интерфейса',
-    fields: [
-      { label: 'Русский', value: 'russian', checked: true },
-      { label: 'English', value: 'english', checked: false },
-    ],
-    handler(fieldValue, fields) {
-      fields.forEach((field) => {
-        field.checked = field.value === fieldValue;
-      });
+  // {
+  //   legend: 'Язык интерфейса',
+  //   fields: [
+  //     { label: 'Русский', value: 'russian', checked: true },
+  //     { label: 'English', value: 'english', checked: false },
+  //   ],
+  //   handler(fieldValue, fields) {
+  //     fields.forEach((field) => {
+  //       field.checked = field.value === fieldValue;
+  //     });
 
-      return fields;
-    },
-  },
+  //     return fields;
+  //   },
+  // },
   {
     legend: 'Конвертация',
     fields: [

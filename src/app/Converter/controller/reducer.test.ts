@@ -24,6 +24,9 @@ describe('function reducer:', () => {
     } as Rates,
     userRates: { RUB_USD: ['USD', 'RUB', 82] },
     tip: null,
+    settings: {
+      exchangeBlocks: 2,
+    },
   };
 
   it('Process CHANGE_VALUE action', () => {
