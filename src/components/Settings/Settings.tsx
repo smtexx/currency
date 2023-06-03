@@ -4,6 +4,7 @@ import Dialog from '../Dialog/Dialog';
 import { useState } from 'react';
 import { createStateCopy, setClass } from '../../lib/helpers';
 import { I_SettingsSection, config } from './config';
+import Checkbox from '../Checkbox/Checkbox';
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
@@ -52,13 +53,11 @@ export default function Settings() {
                   const { checked, value } =
                     settings[fieldsetIdx][fieldIdx];
                   return (
-                    <label htmlFor={ID} key={field.value}>
+                    <label id={ID} key={field.value}>
                       {field.label}
-                      <input
-                        type="checkbox"
-                        className="cm-checkbox"
-                        id={ID}
+                      <Checkbox
                         checked={checked}
+                        labelID={ID}
                         onChange={() =>
                           changeSettings(
                             fieldsetIdx,
