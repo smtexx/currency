@@ -15,14 +15,15 @@ export default function Dialog({ open, children }: I_Props) {
 
       if (!dialog.open && open) {
         dialog.showModal();
-        const bodyWidth = document.body.clientWidth;
-        document.body.style.overflow = 'hidden';
-        document.body.style.width = `${bodyWidth}px`;
+        const padding =
+          window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflowY = 'hidden';
+        document.body.style.paddingRight = `${padding}px`;
       }
       if (dialog.open && !open) {
         dialog.close();
         document.body.style.overflowY = '';
-        document.body.style.width = '';
+        document.body.style.paddingRight = '';
       }
     }
   }, [open]);
