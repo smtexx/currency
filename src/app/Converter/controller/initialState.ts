@@ -12,6 +12,6 @@ export const initialState: ConverterState = {
   userRates: {},
   tip: null,
   settings: {
-    exchangeBlocks: 2,
+    tripleСonversion: true,
   },
 };

@@ -30,7 +30,7 @@ describe('function recalculateCurrencies:', () => {
       userRates: {},
       tip: null,
       settings: {
-        exchangeBlocks: 2,
+        tripleСonversion: true,
       },
     };
     // Recalculate value by index 1
@@ -63,7 +63,7 @@ describe('function recalculateCurrencies:', () => {
       userRates: { EUR_RSD: ['EUR', 'RSD', 117.5] },
       tip: null,
       settings: {
-        exchangeBlocks: 2,
+        tripleСonversion: true,
       },
     };
     recalculateCurrencies(state, 1);
@@ -85,7 +85,7 @@ describe('function recalculateCurrencies:', () => {
       userRates: { EUR_RSD: ['EUR', 'RSD', 117.5] },
       tip: null,
       settings: {
-        exchangeBlocks: 2,
+        tripleСonversion: true,
       },
     };
     recalculateCurrencies(state, 0);

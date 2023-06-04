@@ -31,6 +31,6 @@ export interface ConverterState {
   };
   tip: string[] | null;
   settings: {
-    exchangeBlocks: 2 | 3;
+    tripleСonversion: boolean;
   };
 }

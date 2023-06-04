@@ -25,7 +25,7 @@ describe('function reducer:', () => {
     userRates: { RUB_USD: ['USD', 'RUB', 82] },
     tip: null,
     settings: {
-      exchangeBlocks: 2,
+      tripleСonversion: true,
     },
   };
 
