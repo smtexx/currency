@@ -4,10 +4,19 @@ import { useContext, useEffect, useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 import CustomDialog from '../CustomDialog/CustomDialog';
 import { ConverterContext } from '../../app/Converter/controller/context';
+import {
+  initialSavingState,
+  I_Field,
+  E_Fields,
+  handleSavingStateChange,
+} from './savingState';
+import { saveConverterData } from './saveConverterData';
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
   const [tripleConversion, setTripleConversion] = useState(true);
+  const [savingState, setSavingState] = useState(initialSavingState);
+  const [savingError, setSavingError] = useState(false);
   const { state, dispatch } = useContext(ConverterContext);
 
   // Sync tripleConversation between app state and local state
@@ -17,31 +26,27 @@ export default function Settings() {
   }, [open]);
 
   function saveSettings() {
-    dispatch({
-      type: 'SET_TRIPLE_CONVERSION',
-      payload: tripleConversion,
-    });
+    if (tripleConversion !== state.settings.tripleСonversion) {
+      dispatch({
+        type: 'SET_TRIPLE_CONVERSION',
+        payload: tripleConversion,
+      });
+    }
 
-    // Close settings menu
-    setOpen(false);
+    const isSaved = saveConverterData(savingState, state);
+    if (isSaved) {
+      // Close settings menu
+      setOpen(false);
+      setSavingError(false);
+    } else {
+      setSavingError(true);
+    }
   }
 
-  // const [settings, setSettings] = useState(
-  //   config.map((section) => section.fields)
-  // );
-
-  // function changeSettings(
-  //   fieldsetIdx: number,
-  //   fieldValue: string,
-  //   handler: I_SettingsSection['handler']
-  // ) {
-  //   const newSettings = createStateCopy(settings);
-  //   newSettings[fieldsetIdx] = handler(
-  //     fieldValue,
-  //     newSettings[fieldsetIdx]
-  //   );
-  //   setSettings(newSettings);
-  // }
+  function closeSettings() {
+    setOpen(false);
+    setSavingError(false);
+  }
 
   return (
     <>
@@ -58,7 +63,7 @@ export default function Settings() {
           <>
             <button
               className="cm-text-button"
-              onClick={() => setOpen(false)}
+              onClick={closeSettings}
             >
               Отмена
             </button>
@@ -70,9 +75,12 @@ export default function Settings() {
       >
         <div className={s.content}>
           <p className={s.tip}>
-            Здесь вы можете изменять различные настройки, а также
-            управлять сохранением данных приложения.
+            Здесь вы можете изменять количество блоков для конвертации
+            валют, а также управлять сохранением данных приложения.
+            Сохраненные данные хранятся в браузере, и будут
+            загружаться при повторном запуске приложения.
           </p>
+
           <form className={s.settings}>
             <fieldset>
               <legend>Конвертация</legend>
@@ -87,32 +95,31 @@ export default function Settings() {
                 />
               </label>
             </fieldset>
-            {/* {config.map((fieldset, fieldsetIdx) => (
-              <fieldset key={fieldsetIdx}>
-                <legend>{fieldset.legend}</legend>
-                {fieldset.fields.map((field, fieldIdx) => {
-                  const ID = `settings_field_${field.value}`;
-                  const { checked, value } =
-                    settings[fieldsetIdx][fieldIdx];
-                  return (
-                    <label id={ID} key={field.value}>
-                      {field.label}
-                      <Checkbox
-                        checked={checked}
-                        labelID={ID}
-                        onChange={() =>
-                          changeSettings(
-                            fieldsetIdx,
-                            value,
-                            fieldset.handler
-                          )
-                        }
-                      />
-                    </label>
-                  );
-                })}
-              </fieldset>
-            ))} */}
+            <fieldset>
+              <legend>Сохранение</legend>
+              {(
+                Object.entries(savingState) as [E_Fields, I_Field][]
+              ).map(([key, field]) => (
+                <label id={key} key={key}>
+                  {field.label}
+                  <Checkbox
+                    checked={field.checked}
+                    labelID={key}
+                    onChange={() =>
+                      setSavingState(
+                        handleSavingStateChange(savingState, key)
+                      )
+                    }
+                  />
+                </label>
+              ))}
+              {!savingError ? null : (
+                <p className={s.savingError}>
+                  К сожалению, ваш браузер не поддерживает сохранение
+                  данных.
+                </p>
+              )}
+            </fieldset>
           </form>
         </div>
       </CustomDialog>
