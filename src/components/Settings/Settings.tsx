@@ -1,29 +1,47 @@
-import { RiSettings5Line } from 'react-icons/ri';
 import s from './Settings.module.scss';
-import { useState } from 'react';
-import { createStateCopy } from '../../lib/helpers';
-import { I_SettingsSection, config } from './config';
+import { RiSettings5Line } from 'react-icons/ri';
+import { useContext, useEffect, useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 import CustomDialog from '../CustomDialog/CustomDialog';
+import { ConverterContext } from '../../app/Converter/controller/context';
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
-  const [settings, setSettings] = useState(
-    config.map((section) => section.fields)
-  );
+  const [tripleConversion, setTripleConversion] = useState(true);
+  const { state, dispatch } = useContext(ConverterContext);
 
-  function changeSettings(
-    fieldsetIdx: number,
-    fieldValue: string,
-    handler: I_SettingsSection['handler']
-  ) {
-    const newSettings = createStateCopy(settings);
-    newSettings[fieldsetIdx] = handler(
-      fieldValue,
-      newSettings[fieldsetIdx]
-    );
-    setSettings(newSettings);
+  // Sync tripleConversation between app state and local state
+  useEffect(() => {
+    setTripleConversion(state.settings.tripleСonversion);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  function saveSettings() {
+    dispatch({
+      type: 'SET_TRIPLE_CONVERSION',
+      payload: tripleConversion,
+    });
+
+    // Close settings menu
+    setOpen(false);
   }
+
+  // const [settings, setSettings] = useState(
+  //   config.map((section) => section.fields)
+  // );
+
+  // function changeSettings(
+  //   fieldsetIdx: number,
+  //   fieldValue: string,
+  //   handler: I_SettingsSection['handler']
+  // ) {
+  //   const newSettings = createStateCopy(settings);
+  //   newSettings[fieldsetIdx] = handler(
+  //     fieldValue,
+  //     newSettings[fieldsetIdx]
+  //   );
+  //   setSettings(newSettings);
+  // }
 
   return (
     <>
@@ -44,7 +62,9 @@ export default function Settings() {
             >
               Отмена
             </button>
-            <button className="cm-text-button">Сохранить</button>
+            <button className="cm-text-button" onClick={saveSettings}>
+              Сохранить
+            </button>
           </>
         }
       >
@@ -54,7 +74,20 @@ export default function Settings() {
             управлять сохранением данных приложения.
           </p>
           <form className={s.settings}>
-            {config.map((fieldset, fieldsetIdx) => (
+            <fieldset>
+              <legend>Конвертация</legend>
+              <label id="tripleConversion">
+                Дополнительный блок
+                <Checkbox
+                  checked={tripleConversion}
+                  labelID="tripleConversion"
+                  onChange={() =>
+                    setTripleConversion(!tripleConversion)
+                  }
+                />
+              </label>
+            </fieldset>
+            {/* {config.map((fieldset, fieldsetIdx) => (
               <fieldset key={fieldsetIdx}>
                 <legend>{fieldset.legend}</legend>
                 {fieldset.fields.map((field, fieldIdx) => {
@@ -79,7 +112,7 @@ export default function Settings() {
                   );
                 })}
               </fieldset>
-            ))}
+            ))} */}
           </form>
         </div>
       </CustomDialog>

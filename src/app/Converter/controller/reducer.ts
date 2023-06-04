@@ -78,7 +78,12 @@ export interface HideTipAction {
   payload: null;
 }
 
-export type Dispatch = React.Dispatch<
+export interface SetTripleСonversionAction {
+  type: 'SET_TRIPLE_CONVERSION';
+  payload: boolean;
+}
+
+type Actions =
   | ChangeValueAction
   | ChangeCurrencyAction
   | UpdateRatesAction
@@ -86,18 +91,13 @@ export type Dispatch = React.Dispatch<
   | RemoveUserRateAction
   | ShowTipAction
   | HideTipAction
->;
+  | SetTripleСonversionAction;
+
+export type Dispatch = React.Dispatch<Actions>;
 
 export function reducer(
   state: ConverterState,
-  action:
-    | ChangeValueAction
-    | ChangeCurrencyAction
-    | UpdateRatesAction
-    | AddUserRateAction
-    | RemoveUserRateAction
-    | ShowTipAction
-    | HideTipAction
+  action: Actions
 ): ConverterState {
   const newState = createStateCopy(state);
   const { type, payload } = action;
@@ -190,6 +190,18 @@ export function reducer(
 
   if (type === 'HIDE_TIP') {
     newState.tip = null;
+  }
+
+  if (type === 'SET_TRIPLE_CONVERSION') {
+    if (payload && !newState.settings.tripleСonversion) {
+      newState.settings.tripleСonversion = true;
+      newState.currencyIO.push({ currency: 'RUB', value: '0' });
+      recalculateCurrencies(newState, 0);
+    }
+    if (!payload && newState.settings.tripleСonversion) {
+      newState.settings.tripleСonversion = false;
+      newState.currencyIO = newState.currencyIO.slice(0, 2);
+    }
   }
 
   return newState;
