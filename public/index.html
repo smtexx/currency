@@ -46,7 +46,7 @@
     />
     <meta
       property="og:description"
-      content="XChange_PRO - профессиональный конвертер валют. Более 160 мировых валют. Банковские и пользовательские курсы, парралельная конвертация и многое другое в пару кликов."
+      content="Более 160 мировых валют. Банковские и пользовательские курсы, парралельная конвертация и многое другое в пару кликов."
     />
     <meta
       property="og:image"
@@ -60,7 +60,7 @@
     <!-- DESCRIPTION --- START -->
     <meta
       name="description"
-      content="XChange_PRO - профессиональный конвертер валют. Более 160 мировых валют. Банковские и пользовательские курсы, парралельная конвертация и многое другое в пару кликов."
+      content="Более 160 мировых валют. Банковские и пользовательские курсы, парралельная конвертация и многое другое в пару кликов."
     />
     <title>XChange_PRO | - Профессиональный конвертер валют</title>
     <!-- DESCRIPTION --- END -->
@@ -70,24 +70,6 @@
     <noscript
       >You need to enable JavaScript to run this app.</noscript
     >
-    <script>
-      window.addEventListener(
-        'beforeinstallprompt',
-        (e) => {
-          e.preventDefault();
-          console.log(e);
-          const propName = 'cusomInstallPromptEvent';
-          if (!(propName in window)) {
-            window[propName] = e;
-          } else {
-            console.error(
-              `Property ${propName} already exist in Window`
-            );
-          }
-        },
-        { once: true }
-      );
-    </script>
     <div id="root"></div>
   </body>
 </html>
