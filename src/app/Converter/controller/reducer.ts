@@ -17,6 +17,7 @@ import {
 } from './dataProcessing';
 import { getRate } from './dataProcessing';
 import { recalculateCurrencyBlock } from './dataProcessing';
+import { I_ConverterSavedData } from '../../../components/Settings/saveConverterData';
 
 export interface ChangeValueAction {
   type: 'CHANGE_VALUE';
@@ -83,6 +84,11 @@ export interface SetTripleСonversionAction {
   payload: boolean;
 }
 
+export interface RestoreData {
+  type: 'RESTORE_DATA';
+  payload: I_ConverterSavedData;
+}
+
 type Actions =
   | ChangeValueAction
   | ChangeCurrencyAction
@@ -91,7 +97,8 @@ type Actions =
   | RemoveUserRateAction
   | ShowTipAction
   | HideTipAction
-  | SetTripleСonversionAction;
+  | SetTripleСonversionAction
+  | RestoreData;
 
 export type Dispatch = React.Dispatch<Actions>;
 
@@ -201,6 +208,15 @@ export function reducer(
     if (!payload && newState.settings.tripleСonversion) {
       newState.settings.tripleСonversion = false;
       newState.currencyIO = newState.currencyIO.slice(0, 2);
+    }
+  }
+
+  if (type === 'RESTORE_DATA') {
+    if (payload.userRates) {
+      newState.userRates = payload.userRates;
+    }
+    if (payload.currencyIO) {
+      newState.currencyIO = payload.currencyIO;
     }
   }
 

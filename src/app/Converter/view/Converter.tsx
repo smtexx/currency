@@ -7,6 +7,7 @@ import { ConverterContext } from '../controller/context';
 import { fetchRates } from '../api/fetchRates';
 import { ConverterStatus } from '../../../types';
 import { UpdateRatesActionPayload } from '../controller/reducer';
+import { getConverterData } from '../../../components/Settings/getConverterData';
 
 export default function Converter() {
   const { dispatch } = useContext(ConverterContext);
@@ -28,6 +29,18 @@ export default function Converter() {
       }
 
       dispatch({ type: 'UPDATE_STATUS', payload });
+
+      // Get saved data and use it
+      const savedData = getConverterData();
+      if (savedData?.settings) {
+        dispatch({
+          type: 'SET_TRIPLE_CONVERSION',
+          payload: savedData.settings.tripleСonversion,
+        });
+      }
+      if (savedData !== null) {
+        dispatch({ type: 'RESTORE_DATA', payload: savedData });
+      }
     })();
   }, [dispatch]);
 

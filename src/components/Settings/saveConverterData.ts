@@ -3,7 +3,6 @@ import { T_SavingState } from './savingState';
 import { CONVERTER_SAVED_DATA_KEY } from './storageKey';
 
 export interface I_ConverterSavedData {
-  rates?: ConverterState['rates'];
   userRates?: ConverterState['userRates'];
   currencyIO?: ConverterState['currencyIO'];
   settings?: ConverterState['settings'];
@@ -11,7 +10,8 @@ export interface I_ConverterSavedData {
 
 export function saveConverterData(
   savingState: T_SavingState,
-  appState: ConverterState
+  appState: ConverterState,
+  tripleСonversion: boolean
 ): boolean {
   try {
     // Clear all data
@@ -21,9 +21,6 @@ export function saveConverterData(
     }
 
     const dataToSave: I_ConverterSavedData = {};
-    if (savingState.SAVE_RATES.checked && appState.rates !== null) {
-      dataToSave.rates = appState.rates;
-    }
     if (
       savingState.SAVE_USER_RATES.checked &&
       Object.keys(appState.userRates).length !== 0
@@ -34,7 +31,7 @@ export function saveConverterData(
       dataToSave.currencyIO = appState.currencyIO;
     }
     if (savingState.SAVE_APP_SETTINGS.checked) {
-      dataToSave.settings = appState.settings;
+      dataToSave.settings = { tripleСonversion };
     }
 
     if (Object.keys(dataToSave).length !== 0) {

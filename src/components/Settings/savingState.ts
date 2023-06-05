@@ -1,7 +1,6 @@
 import { createStateCopy } from '../../lib/helpers';
 
 export enum E_Fields {
-  SAVE_RATES = 'SAVE_RATES',
   SAVE_USER_RATES = 'SAVE_USER_RATES',
   SAVE_EXCHANGE_DATA = 'SAVE_EXCHANGE_DATA',
   SAVE_APP_SETTINGS = 'SAVE_APP_SETTINGS',
@@ -18,13 +17,9 @@ export type T_SavingState = {
 };
 
 export const initialSavingState: T_SavingState = {
-  [E_Fields.SAVE_RATES]: {
-    label: 'Курсы валют',
-    checked: false,
-  },
   [E_Fields.SAVE_USER_RATES]: {
     label: 'Сохраненные курсы',
-    checked: true,
+    checked: false,
   },
   [E_Fields.SAVE_EXCHANGE_DATA]: {
     label: 'Введенные значения',
@@ -32,7 +27,7 @@ export const initialSavingState: T_SavingState = {
   },
   [E_Fields.SAVE_APP_SETTINGS]: {
     label: 'Настройки приложения',
-    checked: true,
+    checked: false,
   },
   [E_Fields.CLEAR_ALL_SETTINGS]: {
     label: 'Удалить все настройки',

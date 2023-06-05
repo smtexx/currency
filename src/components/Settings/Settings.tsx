@@ -11,6 +11,7 @@ import {
   handleSavingStateChange,
 } from './savingState';
 import { saveConverterData } from './saveConverterData';
+import { setClass } from '../../lib/helpers';
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
@@ -33,7 +34,11 @@ export default function Settings() {
       });
     }
 
-    const isSaved = saveConverterData(savingState, state);
+    const isSaved = saveConverterData(
+      savingState,
+      state,
+      tripleConversion
+    );
     if (isSaved) {
       // Close settings menu
       setOpen(false);
@@ -51,7 +56,11 @@ export default function Settings() {
   return (
     <>
       <button
-        className="cm-icon-button cm-link-hover"
+        className={setClass([
+          ['cm-icon-button'],
+          ['cm-link-hover'],
+          [s.settingsBtn],
+        ])}
         onClick={() => setOpen(true)}
       >
         <RiSettings5Line />
