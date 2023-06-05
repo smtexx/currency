@@ -74,6 +74,8 @@
       window.addEventListener(
         'beforeinstallprompt',
         (e) => {
+          e.preventDefault();
+          console.log(e);
           const propName = 'cusomInstallPromptEvent';
           if (!(propName in window)) {
             window[propName] = e;
