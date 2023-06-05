@@ -10,8 +10,7 @@ export interface I_ConverterSavedData {
 
 export function saveConverterData(
   savingState: T_SavingState,
-  appState: ConverterState,
-  tripleСonversion: boolean
+  appState: ConverterState
 ): boolean {
   try {
     // Clear all data
@@ -31,7 +30,7 @@ export function saveConverterData(
       dataToSave.currencyIO = appState.currencyIO;
     }
     if (savingState.SAVE_APP_SETTINGS.checked) {
-      dataToSave.settings = { tripleСonversion };
+      dataToSave.settings = appState.settings;
     }
 
     if (Object.keys(dataToSave).length !== 0) {

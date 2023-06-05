@@ -34,11 +34,7 @@ export default function Settings() {
       });
     }
 
-    const isSaved = saveConverterData(
-      savingState,
-      state,
-      tripleConversion
-    );
+    const isSaved = saveConverterData(savingState, state);
     if (isSaved) {
       // Close settings menu
       setOpen(false);
