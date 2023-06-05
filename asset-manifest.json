@@ -1,11 +1,19 @@
 {
   "files": {
-    "main.css": "/currency/static/css/main.f8fd2984.css",
-    "main.js": "/currency/static/js/main.66fe695c.js",
+    "main.css": "/currency/static/css/main.6458c840.css",
+    "main.js": "/currency/static/js/main.1e4957a8.js",
     "static/js/787.ca7f2fcd.chunk.js": "/currency/static/js/787.ca7f2fcd.chunk.js",
     "static/media/bg.jpg": "/currency/static/media/bg.5515fd51048265016559.jpg",
+    "static/media/subset-RobotoCondensed-Italic.woff": "/currency/static/media/subset-RobotoCondensed-Italic.68ac9c3788407ae84b96.woff",
+    "static/media/subset-RobotoCondensed-Bold.woff": "/currency/static/media/subset-RobotoCondensed-Bold.af60e2feb65285a4df79.woff",
+    "static/media/subset-RobotoCondensed-Regular.woff": "/currency/static/media/subset-RobotoCondensed-Regular.11cc996dc9499727261e.woff",
+    "static/media/subset-RobotoCondensed-Light.woff": "/currency/static/media/subset-RobotoCondensed-Light.093a7fb07328818c254d.woff",
     "static/media/subset-Philosopher-Regular.woff": "/currency/static/media/subset-Philosopher-Regular.4f3ffb7dda8073a0364f.woff",
     "static/media/subset-Philosopher-Bold.woff": "/currency/static/media/subset-Philosopher-Bold.031efafc4ffb466087eb.woff",
+    "static/media/subset-RobotoCondensed-Italic.woff2": "/currency/static/media/subset-RobotoCondensed-Italic.b2a175aa78c0c30fe30e.woff2",
+    "static/media/subset-RobotoCondensed-Bold.woff2": "/currency/static/media/subset-RobotoCondensed-Bold.62166eff3d46e9e1dc30.woff2",
+    "static/media/subset-RobotoCondensed-Regular.woff2": "/currency/static/media/subset-RobotoCondensed-Regular.e99b07a3a8cf1a060bc3.woff2",
+    "static/media/subset-RobotoCondensed-Light.woff2": "/currency/static/media/subset-RobotoCondensed-Light.3c3f009a42f13a5a4337.woff2",
     "static/media/subset-Philosopher-Regular.woff2": "/currency/static/media/subset-Philosopher-Regular.09964a551b39b9830172.woff2",
     "static/media/subset-Philosopher-Bold.woff2": "/currency/static/media/subset-Philosopher-Bold.f398cb05dd40f30d2daf.woff2",
     "static/media/subset-SpaceMono-Regular.woff": "/currency/static/media/subset-SpaceMono-Regular.e5d07c15c8e1f790394f.woff",
@@ -13,12 +21,12 @@
     "static/media/subset-RussoOne-Regular.woff": "/currency/static/media/subset-RussoOne-Regular.5df0b750eaa28b896a6f.woff",
     "static/media/subset-RussoOne-Regular.woff2": "/currency/static/media/subset-RussoOne-Regular.66a5fa9da97889ed96b0.woff2",
     "index.html": "/currency/index.html",
-    "main.f8fd2984.css.map": "/currency/static/css/main.f8fd2984.css.map",
-    "main.66fe695c.js.map": "/currency/static/js/main.66fe695c.js.map",
+    "main.6458c840.css.map": "/currency/static/css/main.6458c840.css.map",
+    "main.1e4957a8.js.map": "/currency/static/js/main.1e4957a8.js.map",
     "787.ca7f2fcd.chunk.js.map": "/currency/static/js/787.ca7f2fcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8fd2984.css",
-    "static/js/main.66fe695c.js"
+    "static/css/main.6458c840.css",
+    "static/js/main.1e4957a8.js"
   ]
 }
