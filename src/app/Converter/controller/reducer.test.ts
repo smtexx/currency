@@ -27,7 +27,7 @@ describe('function reducer:', () => {
     settings: {
       tripleСonversion: true,
     },
-  };
+  } as unknown as ConverterState;
 
   it('Process CHANGE_VALUE action', () => {
     const newState = reducer(initialState, {

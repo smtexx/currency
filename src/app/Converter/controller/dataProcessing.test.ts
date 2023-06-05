@@ -32,7 +32,7 @@ describe('function recalculateCurrencies:', () => {
       settings: {
         tripleСonversion: true,
       },
-    };
+    } as unknown as ConverterState;
     // Recalculate value by index 1
     recalculateCurrencies(state, 1);
     expect(state.currencyIO[0].value).toBe('117.05');
@@ -65,7 +65,7 @@ describe('function recalculateCurrencies:', () => {
       settings: {
         tripleСonversion: true,
       },
-    };
+    } as unknown as ConverterState;
     recalculateCurrencies(state, 1);
     expect(state.currencyIO[0].value).toBe('117.5');
     expect(state.currencyIO[1].value).toBe('1');
@@ -87,7 +87,7 @@ describe('function recalculateCurrencies:', () => {
       settings: {
         tripleСonversion: true,
       },
-    };
+    } as unknown as ConverterState;
     recalculateCurrencies(state, 0);
     expect(state.currencyIO[0].value).toBe('235');
     expect(state.currencyIO[1].value).toBe('2');
