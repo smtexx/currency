@@ -11,20 +11,12 @@ export default function App() {
 
   // Catch beforeinstallprompt event
   useEffect(() => {
-    function saveInstallPromptEvent(e: Event) {
-      dispatch({ type: 'SAVE_INSTALL_PROMPT_EVENT', payload: e });
+    if ('cusomInstallPromptEvent' in window) {
+      dispatch({
+        type: 'SAVE_INSTALL_PROMPT_EVENT',
+        payload: window.cusomInstallPromptEvent as Event,
+      });
     }
-
-    window.addEventListener(
-      'beforeinstallprompt',
-      saveInstallPromptEvent
-    );
-
-    return () =>
-      window.removeEventListener(
-        'beforeinstallprompt',
-        saveInstallPromptEvent
-      );
   }, []);
 
   return (
