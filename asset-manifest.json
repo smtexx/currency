@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/currency/static/css/main.6458c840.css",
-    "main.js": "/currency/static/js/main.af499066.js",
+    "main.js": "/currency/static/js/main.cbf77372.js",
     "static/js/787.ca7f2fcd.chunk.js": "/currency/static/js/787.ca7f2fcd.chunk.js",
     "static/media/bg.jpg": "/currency/static/media/bg.5515fd51048265016559.jpg",
     "static/media/subset-RobotoCondensed-Italic.woff": "/currency/static/media/subset-RobotoCondensed-Italic.68ac9c3788407ae84b96.woff",
@@ -22,11 +22,11 @@
     "static/media/subset-RussoOne-Regular.woff2": "/currency/static/media/subset-RussoOne-Regular.66a5fa9da97889ed96b0.woff2",
     "index.html": "/currency/index.html",
     "main.6458c840.css.map": "/currency/static/css/main.6458c840.css.map",
-    "main.af499066.js.map": "/currency/static/js/main.af499066.js.map",
+    "main.cbf77372.js.map": "/currency/static/js/main.cbf77372.js.map",
     "787.ca7f2fcd.chunk.js.map": "/currency/static/js/787.ca7f2fcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6458c840.css",
-    "static/js/main.af499066.js"
+    "static/js/main.cbf77372.js"
   ]
 }
