@@ -1,8 +1,14 @@
+@import '../../app/styles/breakpoints.scss';
+
 .wrapper {
   display: flex;
-  font-size: var(--fz-xl);
+  font-size: var(--fz-xxl);
   border-radius: 2px;
   cursor: pointer;
+
+  @media screen and (min-width: $tablet-m) {
+    font-size: var(--fz-xl);
+  }
 
   &:focus {
     outline: 2px solid var(--co-green);
