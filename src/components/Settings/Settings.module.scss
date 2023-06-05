@@ -49,3 +49,16 @@
   font-weight: 700;
   color: red;
 }
+
+.savedDataList {
+  margin-top: var(--in-s);
+  padding-top: var(--in-s);
+  line-height: 1.5;
+  font-family: var(--ff-roboto);
+  border-top: 2px solid var(--co-green-l);
+
+  span:first-of-type {
+    font-weight: 700;
+    font-family: var(--ff-main);
+  }
+}

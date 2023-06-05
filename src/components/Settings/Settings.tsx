@@ -12,18 +12,50 @@ import {
 } from './savingState';
 import { saveConverterData } from './saveConverterData';
 import { setClass } from '../../lib/helpers';
+import { getConverterData } from './getConverterData';
+
+type T_SavedDataList = (
+  | 'настройки приложения'
+  | 'сохраненные курсы'
+  | 'введенные значения'
+)[];
 
 export default function Settings() {
   const [open, setOpen] = useState(false);
   const [tripleConversion, setTripleConversion] = useState(true);
   const [savingState, setSavingState] = useState(initialSavingState);
   const [savingError, setSavingError] = useState(false);
+  const [savedDataList, setSavedDataList] = useState<T_SavedDataList>(
+    []
+  );
   const { state, dispatch } = useContext(ConverterContext);
-
   // Sync tripleConversation between app state and local state
   useEffect(() => {
     setTripleConversion(state.settings.tripleСonversion);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  // Get list of saved data
+  useEffect(() => {
+    try {
+      const savedDataList: T_SavedDataList = [];
+      const savedData = getConverterData();
+      if (savedData !== null) {
+        if (savedData.userRates) {
+          savedDataList.push('сохраненные курсы');
+        }
+        if (savedData.currencyIO) {
+          savedDataList.push('введенные значения');
+        }
+        if (savedData.settings) {
+          savedDataList.push('настройки приложения');
+        }
+      }
+      setSavedDataList(savedDataList);
+    } catch (error) {
+      console.error(error);
+      setSavedDataList([]);
+    }
   }, [open]);
 
   function saveSettings() {
@@ -118,6 +150,17 @@ export default function Settings() {
                   />
                 </label>
               ))}
+
+              {/* Show saved data list */}
+              <p className={s.savedDataList}>
+                <span>Сохраненны данные: </span>
+                {savedDataList.length === 0
+                  ? 'отсутствуют'
+                  : savedDataList.join(', ')}
+                .
+              </p>
+
+              {/* Error message if localstorage is not available */}
               {!savingError ? null : (
                 <p className={s.savingError}>
                   К сожалению, ваш браузер не поддерживает сохранение
