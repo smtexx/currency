@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import Layout from '../layout/Layout';
 import Converter from './Converter/view/Converter';
 import { reducer } from './Converter/controller/reducer';
@@ -8,6 +8,25 @@ import './styles/index.scss';
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Catch beforeinstallprompt event
+  useEffect(() => {
+    function saveInstallPromptEvent(e: Event) {
+      dispatch({ type: 'SAVE_INSTALL_PROMPT_EVENT', payload: e });
+    }
+
+    window.addEventListener(
+      'beforeinstallprompt',
+      saveInstallPromptEvent
+    );
+
+    return () =>
+      window.removeEventListener(
+        'beforeinstallprompt',
+        saveInstallPromptEvent
+      );
+  }, []);
+
   return (
     <ConverterContext.Provider value={{ state, dispatch }}>
       <Layout>

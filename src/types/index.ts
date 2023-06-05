@@ -33,4 +33,5 @@ export interface ConverterState {
   settings: {
     tripleСonversion: boolean;
   };
+  installprompt: Event | null;
 }

@@ -89,6 +89,11 @@ export interface RestoreData {
   payload: I_ConverterSavedData;
 }
 
+export interface SaveInstallPromptEvent {
+  type: 'SAVE_INSTALL_PROMPT_EVENT';
+  payload: Event;
+}
+
 type Actions =
   | ChangeValueAction
   | ChangeCurrencyAction
@@ -98,7 +103,8 @@ type Actions =
   | ShowTipAction
   | HideTipAction
   | SetTripleСonversionAction
-  | RestoreData;
+  | RestoreData
+  | SaveInstallPromptEvent;
 
 export type Dispatch = React.Dispatch<Actions>;
 
@@ -218,6 +224,10 @@ export function reducer(
     if (payload.currencyIO) {
       newState.currencyIO = payload.currencyIO;
     }
+  }
+
+  if (type === 'SAVE_INSTALL_PROMPT_EVENT') {
+    newState.installprompt = payload;
   }
 
   return newState;

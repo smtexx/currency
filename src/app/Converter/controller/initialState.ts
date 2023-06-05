@@ -14,4 +14,5 @@ export const initialState: ConverterState = {
   settings: {
     tripleСonversion: true,
   },
+  installprompt: null,
 };

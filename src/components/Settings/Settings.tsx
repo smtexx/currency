@@ -81,6 +81,17 @@ export default function Settings() {
     setSavingError(false);
   }
 
+  function hadleInstall() {
+    const event = state.installprompt;
+    if (
+      event !== null &&
+      'prompt' in event &&
+      typeof event.prompt === 'function'
+    ) {
+      event.prompt();
+    }
+  }
+
   return (
     <>
       <button
@@ -169,6 +180,31 @@ export default function Settings() {
               )}
             </fieldset>
           </form>
+
+          {state.installprompt === null ? (
+            <p className={s.tip}>
+              Вы можете установить наше приложение локально на ваше
+              устройство. Запуск такого приложения будет происходить
+              быстрее а использование удобнее. Чтобы узнать как это
+              сделать на вашем устройстве, выполните поиск в
+              интерненте по запросу PWA (Progressive Web Application).
+            </p>
+          ) : (
+            <>
+              <p className={s.tip}>
+                Вы можете установить наше приложение локально на ваше
+                устройство. Для этого нажмите конпку ниже. Чтобы
+                узнать как это работает, выполните поиск в интерненте
+                по запросу PWA (Progressive Web Application).
+              </p>
+              <button
+                className="cm-text-button"
+                onClick={hadleInstall}
+              >
+                Установить приложение
+              </button>
+            </>
+          )}
         </div>
       </CustomDialog>
     </>
