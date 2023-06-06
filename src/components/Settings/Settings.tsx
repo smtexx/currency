@@ -1,5 +1,6 @@
 import s from './Settings.module.scss';
 import { RiSettings5Line } from 'react-icons/ri';
+import { FaRegSave, FaCheck } from 'react-icons/fa';
 import { useContext, useEffect, useState } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 import CustomDialog from '../CustomDialog/CustomDialog';
@@ -152,13 +153,32 @@ export default function Settings() {
               ))}
 
               {/* Show saved data list */}
-              <p className={s.savedDataList}>
-                <span>Сохраненны данные: </span>
-                {savedDataList.length === 0
-                  ? 'отсутствуют'
-                  : savedDataList.join(', ')}
-                .
-              </p>
+              <div className={s.savedDataList}>
+                {savedDataList.length === 0 ? (
+                  <p className={s.savedDataTitle}>
+                    Сохраненные данные отсутствуют
+                  </p>
+                ) : (
+                  <>
+                    <p className={s.savedDataTitle}>
+                      <span>
+                        <FaRegSave />
+                      </span>
+                      Сохраненны данные:{' '}
+                    </p>
+                    <ul className={s.savedFeaturesList}>
+                      {savedDataList.map((item, idx) => (
+                        <li key={idx}>
+                          <span>
+                            <FaCheck />
+                          </span>{' '}
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
 
               {/* Error message if localstorage is not available */}
               {!savingError ? null : (
