@@ -134,3 +134,10 @@ dialog {
   border: none;
   outline: none;
 }
+
+a,
+button,
+label,
+input {
+  -webkit-tap-highlight-color: transparent !important;
+}
