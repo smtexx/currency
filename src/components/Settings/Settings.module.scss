@@ -9,17 +9,18 @@
 .content {
   display: flex;
   flex-direction: column;
-  row-gap: var(--in-m);
+  row-gap: var(--in-l);
 }
 
 .tip {
+  padding: 0 var(--in-s);
   font-family: var(--ff-roboto);
 }
 
 .settings {
   display: flex;
   flex-direction: column;
-  row-gap: var(--in-m);
+  row-gap: var(--in-l);
 
   fieldset {
     display: flex;
