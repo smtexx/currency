@@ -26,9 +26,13 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--in-s);
-    padding: var(--in-m) var(--in-l);
+    padding: var(--in-m);
     border: 2px solid var(--co-green);
     border-radius: var(--rad-m);
+
+    @media screen and (min-width: $phone-xs) {
+      padding: var(--in-m) var(--in-l);
+    }
   }
 
   legend {

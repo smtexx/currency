@@ -17,7 +17,7 @@ import { getConverterData } from './getConverterData';
 
 type T_SavedDataList = (
   | 'настройки приложения'
-  | 'сохраненные курсы'
+  | 'пользовательские курсы'
   | 'введенные значения'
 )[];
 
@@ -43,7 +43,7 @@ export default function Settings() {
       const savedData = getConverterData();
       if (savedData !== null) {
         if (savedData.userRates) {
-          savedDataList.push('сохраненные курсы');
+          savedDataList.push('пользовательские курсы');
         }
         if (savedData.currencyIO) {
           savedDataList.push('введенные значения');
@@ -113,7 +113,7 @@ export default function Settings() {
       >
         <div className={s.content}>
           <p className={s.tip}>
-            Здесь вы можете изменять количество блоков для конвертации
+            Вы можете изменять количество блоков для конвертации
             валют, а также управлять сохранением данных приложения.
             Сохраненные данные хранятся в браузере, и будут
             загружаться при повторном запуске приложения.
@@ -183,20 +183,24 @@ export default function Settings() {
               {/* Error message if localstorage is not available */}
               {!savingError ? null : (
                 <p className={s.savingError}>
-                  К сожалению, ваш браузер не поддерживает сохранение
-                  данных.
+                  Ваш браузер не поддерживает сохранение данных
                 </p>
               )}
             </fieldset>
           </form>
 
           <p className={s.tip}>
-            Вы можете установить наше приложение локально на ваше
-            устройство. Запуск такого приложения будет происходить
-            быстрее а использование удобнее. Чтобы узнать как это
-            сделать на вашем устройстве, выполните поиск в интерненте
-            для вашего браузера, по запросу PWA (Progressive Web
-            Application).
+            Для большего удобства, установите приложение локально на
+            ваше устройство! Запуск установленного приложения будет
+            происходить быстрее, а его использование гораздо удобнее,
+            так как оно всегда под рукой. Чтобы узнать как это сделать
+            на вашем устройстве, выполните поиск в интерненте по
+            запросу{' '}
+            <span className="cm-italic">
+              &quot;как установить PWA (Progressive Web
+              Application)&quot;
+            </span>
+            .
           </p>
         </div>
       </CustomDialog>

@@ -18,7 +18,7 @@ export type T_SavingState = {
 
 export const initialSavingState: T_SavingState = {
   [E_Fields.SAVE_USER_RATES]: {
-    label: 'Сохраненные курсы',
+    label: 'Пользовательские курсы',
     checked: false,
   },
   [E_Fields.SAVE_EXCHANGE_DATA]: {
